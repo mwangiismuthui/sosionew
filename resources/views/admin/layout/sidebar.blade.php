@@ -2,7 +2,7 @@
   <div class="brand-logo">
     <a href="{{route('dashboard')}}">
       <img src="/backend/assets/images/logo.png" class="logo-icon" alt="logo icon">
-      <h5 class="logo-text">Macrolan</h5>
+      <h5 class="logo-text">SosioFruits</h5>
     </a>
   </div>
   <ul class="sidebar-menu do-nicescrol">
@@ -28,13 +28,7 @@
       </a>
 
     </li>
-    <li>
-      <a href="{{route('service.index')}}" class="waves-effect">
-          <i class="icon-briefcase"></i>
-          <span>Service Management</span>
-        </a>
   
-      </li>
     <li>
     <a href="{{route('slider.index')}}" class="waves-effect">
         <i class="ti-shopping-cart"></i>
@@ -43,13 +37,7 @@
 
     </li>
  
-    <li>
-    <a href="{{route('order.index')}}" class="waves-effect">
-        <i class="ti-shopping-cart"></i>
-        <span>Order Management</span>
-      </a>
-
-    </li>
+  
  
 
     <li>

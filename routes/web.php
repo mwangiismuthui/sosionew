@@ -48,6 +48,7 @@ Route::get('/newsletter','FrontEndController@newsletter')->name('newsletter');
 
 
 
+Route::get('/dashboard/index', 'HomeController@dashboard')->name('dashboard');
 
 // ..................Products..............................//
 Route::get('/product/index', 'ProductController@index')->name('product.index');

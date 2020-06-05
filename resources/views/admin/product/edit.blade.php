@@ -65,7 +65,7 @@
             @foreach ($photos as $photo)
             <div class="icon-remove blue delete" id="imgwrapper{{$photo->id}}">
                 <img class="thumbnail"
-                    src="{{url('/Macrolan_Products').'/'.$photo->image_path }}"
+                    src="{{url('/SosioFruits_Products').'/'.$photo->image_path }}"
                     alt="image" height="100" width="100" />
                 <a href="#" onclick="deletepic({{$photo->id}})" class="photodelete"
                     id="{{$photo->id}}"><i

@@ -80,7 +80,7 @@ class SliderController extends Controller
 
         public function generateUniqueFileName($image, $destinationPath)
     {
-        $initial = "Macrolan";
+        $initial = "SosioFruits";
         $random = Str::random();
         $name = $initial  .$random. time() . '.' . $image->getClientOriginalExtension();
         if ($image->move(public_path() . $destinationPath, $name)) {

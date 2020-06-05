@@ -76,7 +76,7 @@ class ProductController extends Controller
                 ],Response::HTTP_OK);
             }
         
-        $imgdestination = '/Macrolan_Products';
+        $imgdestination = '/SosioFruits_Products';
         $gallerarray = [];
         if ($request->hasfile('main_image')) {
             $productimages = $request->file('main_image');
@@ -122,7 +122,7 @@ class ProductController extends Controller
     }
     public function generateUniqueFileName($image, $destinationPath)
     {
-        $initial = "Macrolan";
+        $initial = "SosioFruits";
         $random = Str::random();
         $name = $initial  .$random. time() . '.' . $image->getClientOriginalExtension();
         if ($image->move(public_path() . $destinationPath, $name)) {
@@ -189,7 +189,7 @@ class ProductController extends Controller
             ],Response::HTTP_OK);
         }
 
-        $imgdestination = '/Macrolan_Products';
+        $imgdestination = '/SosioFruits_Products';
         $gallerarray = [];
         if ($request->hasfile('main_image')) {
             $productimages = $request->file('main_image');

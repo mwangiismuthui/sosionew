@@ -7,7 +7,7 @@
 		<div class="card-body">
 		 <div class="card-content p-2">
 		 	<div class="text-center">
-		 		<img src="/backend/assets/images/logo-icon.png">
+		 		<img src="/backend/assets/images/logo.png">
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
           <form method="POST" action="{{ route('login') }}">
@@ -61,10 +61,10 @@
 			</div>
 			 <button type="submit" class="btn btn-primary shadow-primary btn-round btn-block waves-effect waves-light">Sign In</button>
 			  <div class="text-center pt-3">
-				<p>or Sign in with</p>
-				<a href="javascript:void()" class="btn-social btn-social-circle btn-facebook waves-effect waves-light m-1"><i class="fa fa-facebook"></i></a>
+				{{-- <p>or Sign in with</p> --}}
+				{{-- <a href="javascript:void()" class="btn-social btn-social-circle btn-facebook waves-effect waves-light m-1"><i class="fa fa-facebook"></i></a>
 				<a href="javascript:void()" class="btn-social btn-social-circle btn-google-plus waves-effect waves-light m-1"><i class="fa fa-google-plus"></i></a>
-				<a href="javascript:void()" class="btn-social btn-social-circle btn-twitter waves-effect waves-light m-1"><i class="fa fa-twitter"></i></a>
+				<a href="javascript:void()" class="btn-social btn-social-circle btn-twitter waves-effect waves-light m-1"><i class="fa fa-twitter"></i></a> --}}
 				<hr>
 				<p class="text-muted mb-0">Do not have an account? <a href="{{route('register')}}"> Sign Up here</a></p>
 			  </div>

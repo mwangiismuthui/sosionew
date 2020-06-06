@@ -13,7 +13,7 @@
             </a>
                     </li>
                     <li>
-                        <a href="{{route('products')}}">Product</a>
+                        <a href="javascript:void();">Product</a>
                     </li>
                     <li class="active">{{$product->product}}</li>
                 </ol>

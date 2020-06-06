@@ -13,32 +13,32 @@
 
 
 Route::get('/','FrontEndController@index')->name('index');
-Route::get('/our-products/sosio-fruits-and-vegetables','FrontEndController@products')->name('products');
+// Route::get('/our-products/sosio-fruits-and-vegetables','FrontEndController@products')->name('products');
 Route::get('/about-sosio-fruits-and-vegetables','FrontEndController@about')->name('about');
 Route::get('/contact-sosio-fruits-and-vegetables','FrontEndController@contact')->name('contact');
 Route::get('/quality_assurance','FrontEndController@quality_assurance')->name('quality_assurance');
 Route::get('/sosio-fruits-and-vegetables/order/online','FrontEndController@order')->name('order');
-Route::get('/fresh-fruits/kenya-mangoes','FrontEndController@mangoes')->name('mangoes');
-Route::get('/fresh-vegetables/kenya-carrots','FrontEndController@carrots')->name('carrots');
-Route::get('/fresh-fruits/kenyan-avocadoes','FrontEndController@avocadoes')->name('avocadoes');
-Route::get('/fresh-herbs/herbs-in-kenya','FrontEndController@herbs')->name('herbs');
-Route::get('/fresh-spices/spices-in-kenya','FrontEndController@spices')->name('spices');
-Route::get('/fresh-fruits/kenya-fresh-apples','FrontEndController@apples')->name('apples');
-Route::get('/fresh-herbs/kenya-dill','FrontEndController@dill')->name('dill');
-Route::get('/fresh-herbs/kenya-oregano','FrontEndController@oregano')->name('oregano');
-Route::get('/fresh-friuts/kenya-tree-tomato','FrontEndController@tree_tomato')->name('tree_tomato');
-Route::get('/fresh-vegetables/kenya-beetroot','FrontEndController@beetroot')->name('beetroot');
-Route::get('/kenya-vegetables/kenya-brocolli','FrontEndController@brocolli')->name('brocolli');
-Route::get('/kenya-vegetables/butternut-in-kenya','FrontEndController@butternut')->name('butternut');
-Route::get('/herbs-in-kenya/kenya-marjoram','FrontEndController@marjoram')->name('marjoram');
-Route::get('/fresh-vegetables/cabbages-in-kenya','FrontEndController@cabbage')->name('cabbage');
-Route::get('/kenya-thorn-mellon/thorn-mellon','FrontEndController@thorn_mellon')->name('thorn_mellon');
-Route::get('/fresh-fruits/strawberries-in-kenya','FrontEndController@straw_berries')->name('straw_berries');
-Route::get('/fresh-fruits/kenya-passion-fruit','FrontEndController@passion_fruit')->name('passion_fruit');
-Route::get('/fresh-fruits/kenya-pears','FrontEndController@pears')->name('pears');
-Route::get('/fresh-kenyan-rosemary/rosemary-in-kenya','FrontEndController@rosemary')->name('rosemary');
-Route::get('/kenyan-herbs/fresh-curry-leaves','FrontEndController@curry_leaves')->name('curry_leaves');
-Route::get('/kenya-lemon-grass/fresh-lemon-grass','FrontEndController@lemon_grass')->name('lemon_grass');
+// Route::get('/fresh-fruits/kenya-mangoes','FrontEndController@mangoes')->name('mangoes');
+// Route::get('/fresh-vegetables/kenya-carrots','FrontEndController@carrots')->name('carrots');
+// Route::get('/fresh-fruits/kenyan-avocadoes','FrontEndController@avocadoes')->name('avocadoes');
+// Route::get('/fresh-herbs/herbs-in-kenya','FrontEndController@herbs')->name('herbs');
+// Route::get('/fresh-spices/spices-in-kenya','FrontEndController@spices')->name('spices');
+// Route::get('/fresh-fruits/kenya-fresh-apples','FrontEndController@apples')->name('apples');
+// Route::get('/fresh-herbs/kenya-dill','FrontEndController@dill')->name('dill');
+// Route::get('/fresh-herbs/kenya-oregano','FrontEndController@oregano')->name('oregano');
+// Route::get('/fresh-friuts/kenya-tree-tomato','FrontEndController@tree_tomato')->name('tree_tomato');
+// Route::get('/fresh-vegetables/kenya-beetroot','FrontEndController@beetroot')->name('beetroot');
+// Route::get('/kenya-vegetables/kenya-brocolli','FrontEndController@brocolli')->name('brocolli');
+// Route::get('/kenya-vegetables/butternut-in-kenya','FrontEndController@butternut')->name('butternut');
+// Route::get('/herbs-in-kenya/kenya-marjoram','FrontEndController@marjoram')->name('marjoram');
+// Route::get('/fresh-vegetables/cabbages-in-kenya','FrontEndController@cabbage')->name('cabbage');
+// Route::get('/kenya-thorn-mellon/thorn-mellon','FrontEndController@thorn_mellon')->name('thorn_mellon');
+// Route::get('/fresh-fruits/strawberries-in-kenya','FrontEndController@straw_berries')->name('straw_berries');
+// Route::get('/fresh-fruits/kenya-passion-fruit','FrontEndController@passion_fruit')->name('passion_fruit');
+// Route::get('/fresh-fruits/kenya-pears','FrontEndController@pears')->name('pears');
+// Route::get('/fresh-kenyan-rosemary/rosemary-in-kenya','FrontEndController@rosemary')->name('rosemary');
+// Route::get('/kenyan-herbs/fresh-curry-leaves','FrontEndController@curry_leaves')->name('curry_leaves');
+// Route::get('/kenya-lemon-grass/fresh-lemon-grass','FrontEndController@lemon_grass')->name('lemon_grass');
 
 
 // post routes//
@@ -46,15 +46,18 @@ Route::get('/contact/post','FrontEndController@contact_form')->name('contact_for
 Route::get('/order/post','FrontEndController@order_form')->name('order_form');
 Route::get('/newsletter','FrontEndController@newsletter')->name('newsletter');
 
+Auth::routes();
+Route::group(['middleware' => 'auth'], function () {
 
-
-Route::get('/dashboard/index', 'HomeController@dashboard')->name('dashboard');
+    Route::get('/home', 'HomeController@dashboard')->name('dashboard');
+// Route::get('/dashboard/index', 'HomeController@dashboard')->name('dashboard');
 
 // ..................Products..............................//
 Route::get('/product/index', 'ProductController@index')->name('product.index');
 Route::post('/product/store', 'ProductController@store')->name('product.store');
 Route::get('/product/edit/{id}', 'ProductController@edit')->name('product.edit');
 Route::post('/product/update/{id}', 'ProductController@update')->name('product.update');
+Route::get('/product/details/{id}', 'ProductController@productDetails')->name('product.details');
 Route::delete('/product/destroy/', 'ProductController@destroy')->name('product.destroy');
 Route::delete('/photo/destroy/', 'ProductController@photoDestroy')->name('photo.destroy');
 
@@ -71,3 +74,20 @@ Route::post('/slider/store', 'SliderController@store')->name('slider.store');
 Route::get('/slider/edit/{id}', 'SliderController@edit')->name('slider.edit');
 Route::post('/slider/update/{id}', 'SliderController@update')->name('slider.update');
 Route::delete('/slider/destroy/', 'SliderController@destroy')->name('slider.destroy');
+
+
+
+
+
+
+// ..................SEO..............................//
+Route::get('/seo/index', 'SeoController@index')->name('seo.index');
+Route::post('/seo/store', 'SeoController@store')->name('seo.store');
+Route::get('/seo/edit/{id}', 'SeoController@edit')->name('seo.edit');
+Route::post('/seo/update/{id}', 'SeoController@update')->name('seo.update');
+Route::delete('/seo/destroy/', 'SeoController@destroy')->name('seo.destroy');
+Route::delete('/seo/photo/destroy/', 'SeoController@photoDestroy')->name('seo.photo.destroy');
+
+
+
+});

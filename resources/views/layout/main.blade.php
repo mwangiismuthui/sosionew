@@ -10,7 +10,7 @@
 	<link rel="canonical" href="http://sosiofruitsandvegetables.com/" />
 	<meta name="description" content="{{$meta_description}}"> 
 	<meta name="keywords" content="{{$meta_keyword}}"> 
-	<meta name="url" content="{{$meta_url}}">
+	{{-- <meta name="url" content="{{$meta_url}}"> --}}
 	<meta content="Mwangi David Muthui|0721257308" name="author"/> 
 	<meta charset="utf-8">
 	<meta name="google-site-verification" content="esZB6jU6pGSa2UGmMZhfFJrZ_ufNQaNrNUlrjDOHq2E" />
@@ -34,17 +34,17 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="{{$meta_title}}" />
 	<meta property="og:description" content="{{$meta_description}}" />
-	<meta property="og:url" content="{{$meta_url}}" />
+	{{-- <meta property="og:url" content="{{$meta_url}}" /> --}}
 	<meta property="og:site_name" content="{{$meta_title}}" />
-	<meta property="og:image" content="{{$meta_url}}" />
+	{{-- <meta property="og:image" content="{{$meta_url}}" /> --}}
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:description" content="{{$meta_description}}" />
 	<meta name="twitter:title" content="{{$meta_title}}" />
 	<meta name="twitter:site" content="@sosioexporters" />
 	<meta name="twitter:creator" content="@sosioexporters" />
-	<meta name="twitter:url" content="{{$meta_url}}" />
+	{{-- <meta name="twitter:url" content="{{$meta_url}}" /> --}}
 	<meta name="classification" content="{{$meta_description}}"/>
-		<meta name="identifier-URL" content="{{$meta_url}}">
+		{{-- <meta name="identifier-URL" content="{{$meta_url}}"> --}}
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	{{-- <link rel="stylesheet" href="/css/animations.css">
 	<link rel="stylesheet" href="/css/fonts.css"> --}}

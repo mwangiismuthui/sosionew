@@ -5,33 +5,33 @@
 
         <div class="row">
  <div class="col-md-6">
-@foreach ($services as $service)
- <form id="service_add" method="POST" enctype="multipart/form-data">
+@foreach ($seos as $seo)
+ <form id="seo_add" method="POST" enctype="multipart/form-data">
     @csrf
- <input type="hidden" name="service_id" value="{{$service->id}}" id="service_id">
-    <div class="form-group">
-        <label for="title">Service Name</label>
-        <input type="text" class="form-control form-control-rounded" id="title"
-    placeholder="Enter Service Name" name="service" value="{{$service->service}}">
+  <div class="form-group">
+        <label for="title">Product</label>
+        <select name="product_id" id="" class="form-control form-control-rounded">
+            <option value="{{$seo->product->id}}">{{$seo->product->product}}</option>
+            @foreach ($products as $product)
+                
+        <option value="{{$product->id}}">{{$product->product}}</option>
+            @endforeach
+        </select>
     </div>
     <div class="form-group">
-        <label for="description">Description</label>
-    <textarea name="description" id="description" cols="30" rows="10" class="form-control form-control-rounded" placeholder="">
-        {{$service->description}}
+        <label for="description">Meta Description</label>
+        <textarea name="meta_description" id="meta_description" cols="30" rows="10" class="form-control form-control-rounded">
+{{$seo->meta_description}}
         </textarea>
     </div>
-  
     <div class="form-group">
-        <label for="main_image">Main Sevirce Image</label>
-        <input type="file" class="form-control form-control-rounded" id="main_image"
-            placeholder="Enter Service Main Name" name="main_image">
-    </div>
-    <div class="form-group">
-        <label for="gallery">Additional Images</label>
-        <input type="file" class="form-control form-control-rounded" id="gallery"
-            placeholder="Enter Service Additional Images" name="gallery[]">
+        <label for="description">Meta Keywords</label>
+        <textarea name="meta_keyword" id="meta_keywords" cols="30" rows="10" class="form-control form-control-rounded">
+{{$seo->meta_keyword}}
+        </textarea>
     </div>
     
+                  
 
 
     <div class="form-group">
@@ -42,38 +42,19 @@
 @endforeach
 
     </div>
-<div class="col-md-6">
-        <p>Current Images</p>
-        @if (!$photos->count() > 0)
-        <p>No images Yet</p>
-        @else
-        <div class="list_image_gallery">
-            @foreach ($photos as $photo)
-            <div class="icon-remove blue delete" id="imgwrapper{{$photo->id}}">
-                <img class="thumbnail"
-                    src="{{url('/ServiceImages').'/'.$photo->image_path }}"
-                    alt="image" height="100" width="100" />
-                <a href="#" onclick="deletepic({{$photo->id}})" class="photodelete"
-                    id="{{$photo->id}}"><i
-                        class="delete-button fa fa-trash"></i></a>
-            </div>
-            @endforeach
-        </div>
-        @endif
 
-</div>
 </div>
 </div>
 <script>
 
 
 
-var service_id =$('#service_id').val();
-    $("#service_add").on("submit", function (event) {
+var seo_id =$('#seo_id').val();
+    $("#seo_add").on("submit", function (event) {
         event.preventDefault();
-        console.log(service_id);
+        console.log(seo_id);
         $.ajax({
-            url: '/service/update/'+service_id,
+            url: '/seo/update/'+seo_id,
             method: "POST",
             data: new FormData(this),
             contentType: false,

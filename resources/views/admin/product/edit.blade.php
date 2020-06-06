@@ -9,50 +9,67 @@
  <form id="product_add" method="POST"  enctype="multipart/form-data">
     @csrf
  <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">
-        <div class="form-group">
-            <label for="title">Category</label>
-          <select name="category_id" id="" class="form-control form-control-rounded">
-              <option value="">Select Product Category</option>
-              @foreach ($categories as $category)
-                  
-          <option value="{{$category->id}}">{{$category->category}}</option>
-              @endforeach
-          </select>
-        </div>
-        <div class="form-group">
-            <label for="description">Product</label>
-        <input type="text" class="form-control form-control-rounded" name="product" placeholder="Enter Product Name" value="{{$product->product}}">
-        </div>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" class="form-control form-control-rounded" id="price"
-        placeholder="Enter Product Price" name="price" value="{{$product->price}}">
-        </div>
-        <div class="form-group">
-            <label for="main_image">Description</label>
-            <textarea name="description" id="" cols="30" rows="10" class="form-control form-control-rounded">
-                {{$product->description}}
-            </textarea>
-         
-        </div>
-        <div class="form-group">
-            <label for="main_image">Main Sevirce Image</label>
-            <input type="file" class="form-control form-control-rounded" id="main_image"
-                placeholder="Enter Service Main Name" name="main_image">
-        </div>
-        <div class="form-group">
-            <label for="gallery">Additional Images</label>
-            <input type="file" class="form-control form-control-rounded" id="gallery"
-                placeholder="Enter Service Additional Images" name="gallery[]">
-        </div>
-    
+       <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="title">Category</label>
+                            <select name="category_id" id="" class="form-control form-control-rounded">
+                                <option value="{{$product->category->id}}">{{$product->category->category}}</option>
+                                @foreach ($categories as $category)
+
+                                <option value="{{$category->id}}">{{$category->category}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="description">Product</label>
+                            <input type="text" class="form-control form-control-rounded" name="product"
+                                placeholder="Enter Product Name" value="{{$product->product}}">
+                        </div>
+                   
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="main_image">Product Slug</label>
+  
+                            <textarea name="slug" id="" cols="30" rows="10"
+                                class="form-control form-control-rounded word_count" >
+                                {{$product->slug}}
+                                </textarea>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="main_image">Description</label>
+                            <textarea name="description" id="summernoteEditor" cols="30" rows="10"
+                                class="form-control form-control-rounded">
+                                {{$product->description}}
+                                </textarea>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="main_image">Main Product Image</label>
+                            <input type="file" class="form-control form-control-rounded" id="main_image"
+                                placeholder="Enter Service Main Name" name="main_image">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="gallery">Additional Images</label>
+                            <input type="file" class="form-control form-control-rounded" id="gallery"
+                                placeholder="Enter Service Additional Images" name="gallery[]" multiple>
+                        </div>
+                    </div>
 
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary shadow-primary btn-round px-5"><i
-                    class="icon-checkbox3"></i> Save</button>
-        </div>
-    </form>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary shadow-primary btn-round px-5"><i
+                                class="icon-checkbox3"></i> Save</button>
+                    </div>
+                </form>
 @endforeach
 
     </div>
@@ -80,6 +97,27 @@
 </div>
 <script>
 
+$(document).ready(function() {
+    $(".word_count").on('keyup', function() {
+        console.log('me');
+        var words = this.value.match(/\S+/g).length;
+        if (words > 40) {
+            // Split the string on first 200 words and rejoin on spaces
+            var trimmed = $(this).val().split(/\s+/, 200).join(" ");
+            // Add a space at the end to keep new typing making new words
+            $(this).val(trimmed + " ");
+        }
+        else {
+            $('#display_count').text(words);
+            $('#word_left').text(40-words);
+        }
+    });
+ }); 
+
+  $('#summernoteEditor').summernote({
+            height: 400,
+            tabsize: 2
+        });
 var product_id =$('#product_id').val();
     $("#product_add").on("submit", function (event) {
         event.preventDefault();

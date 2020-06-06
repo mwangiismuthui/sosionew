@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductsTable extends Migration
+class CreateSeosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('seos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('category_id');
-            $table->string('product');
-            $table->longText('slug');
-            $table->longText('description');
-            // $table->double('price');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('product_id');
+            $table->longText('meta_description');
+            $table->longText('meta_keyword');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -33,6 +31,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('seos');
     }
 }

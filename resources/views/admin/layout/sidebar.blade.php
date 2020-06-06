@@ -36,21 +36,14 @@
       </a>
 
     </li>
- 
-  
- 
-
     <li>
-      <a href="javaScript:void();" class="waves-effect">
-        <i class="ti-user"></i>
-        <span>User Management</span> <i class="fa fa-angle-left pull-right"></i>
+    <a href="{{route('seo.index')}}" class="waves-effect">
+        <i class="ti-shopping-cart"></i>
+        <span>SEO Management</span>
       </a>
-      <ul class="sidebar-submenu">
-        <li><a href=""><i class="fa fa-circle-o"></i>User Management</a></li>
-        <li><a href=""><i class="fa fa-circle-o"></i>Role Management</a></li>
-      </ul>
+
     </li>
-   
+ 
 
 
   </ul>

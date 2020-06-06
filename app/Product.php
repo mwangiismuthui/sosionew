@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use App\ProductPhoto;
+use App\Seo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
@@ -14,5 +15,8 @@ class Product extends Model
     }
     public function productphotos(){
         return $this->hasMany(ProductPhoto::class);
+    }
+    public function seo(){
+        return $this->hasMany(Seo::class);
     }
 }

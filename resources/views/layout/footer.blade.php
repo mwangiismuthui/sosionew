@@ -25,16 +25,16 @@
                     <h3 class="widget-title">Explore Our Variety</h3>
                     <ul class="list1 no-bullets no-top-border no-bottom-border greylinks">
                         <li>
-                        <a href="{{route('mangoes')}}">Mangoes</a>
+                        <a href="javascript:void();">Mangoes</a>
                         </li>
                         <li>
-                            <a href="{{route('brocolli')}}">Brocolli</a>
+                            <a href="javascript:void();">Brocolli</a>
                         </li>
                         <li>
-                            <a href="{{route('spices')}}">Spices</a>
+                            <a href="javascript:void();">Spices</a>
                         </li>
                         <li>
-                            <a href="{{route('herbs')}}">Herbs</a>
+                            <a href="javascript:void();">Herbs</a>
                         </li>
                     </ul>
                 </div>

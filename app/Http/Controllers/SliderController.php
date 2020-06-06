@@ -53,9 +53,8 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $imgdestination = '/SliderImages';
-        $gallerarray = [];
+    //   dd($request->hasfile('main_image'));
         if ($request->hasfile('main_image')) {
-            // foreach ($request->file('upl') as $image) {
             $sliderimages = $request->file('main_image');
             $imgname = $this->generateUniqueFileName($sliderimages, $imgdestination);
         }

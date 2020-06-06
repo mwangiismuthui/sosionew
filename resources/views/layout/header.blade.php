@@ -12,10 +12,7 @@
                                         <a href="{{route('index')}}">Home</a>
 										</li>
 
-										<li>
-											<a href="{{route('products')}}">Products</a>
 										
-										</li>
 									
 										<li>
 											<a href="{{route('order')}}">Order Online</a>

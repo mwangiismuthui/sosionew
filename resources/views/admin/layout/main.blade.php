@@ -42,6 +42,10 @@
     <!-- notifications css -->
     <link rel="stylesheet" href="/backend/assets/plugins/notifications/css/lobibox.min.css" />
 
+  <link rel="stylesheet" href="/backend/assets/plugins/summernote/dist/summernote-bs4.css"/>
+{{-- 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> --}}
     <!-- Bootstrap core JavaScript-->
     <script src="/backend/assets/js/jquery.min.js"></script>
     <script src="/backend/assets/js/ajax.js"></script>
@@ -59,6 +63,8 @@
     <script src="/backend/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js"></script>
     <script src="/backend/assets/plugins/bootstrap-datatable/js/dataTables.cellEdit.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+  <script src="/backend/assets/plugins/summernote/dist/summernote-bs4.min.js"></script>
    
 
 </head>

@@ -3,8 +3,8 @@
 <section class="intro_section page_mainslider ds">
     <div class="flexslider vertical-nav" data-dots="true" data-nav="false">
         <ul class="slides">
-
-            <li><img src="/images/events/new/slider3.jpg" alt="kenya-fruits" style="">
+@foreach ($sliders as $slider)
+      <li><img src="{{ URL::to('/') }}/SliderImages/{{$slider->image_path}}" alt="{{$slider->subtitle}}" style="">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">
@@ -12,83 +12,23 @@
                                 <div class="slide_description">
                                     <div class="intro-layer" data-animation="fadeInUp">
                                         <h4 class="text-uppercas">
-                                            Fresh + Healthy + Reliable
+                                            {{$slider->subtitle}}
                                         </h4>
                                     </div>
                                     <div class="intro-layer" data-animation="fadeInUp">
-                                        <h2 class="text-uppercase thin">
-                                                An  Oasis Of 
-                                                <br> Farm Freshness
+                                        <h2 class="text-lowercase thin">
+                                               {{$slider->title }}
                                         
                                         </h2>
                                     </div>
                                     
-                                    <div class="intro-layer" data-animation="fadeInUp">
-                                        <a href="{{route('products')}}" class="theme_button color1">
-                                Our Products
-                            </a>
-                                    </div>
                                 </div>
 
                             </div>
                             
             </li>
-
-            <li>
-                <img src="/images/events/new/susan1.jpg" alt="kenya-herbs">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <div class="slide_description_wrapper">
-                                <div class="slide_description">
-                                    <div class="intro-layer" data-animation="fadeInUp">
-                                        <h4 class="text-uppercase">
-                                                Organic + Dedication  
-                                        </h4>
-                                    </div>
-                                    <div class="intro-layer" data-animation="fadeInUp">
-                                        <h2 class="text-uppercase thin">
-                                                Organically grown for 
-                                                <br>you
-                                        </h2>
-                                    </div>
-                                    <div class="intro-layer" data-animation="fadeInUp">
-                                        <a href="{{route('order')}}" class="theme_button color1">
-                                Make an Order
-                            </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            
-            </li>
-
-            <li>
-                <img src="/images/events/new/susan2.jpg" alt="kenya-vegetables">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <div class="slide_description_wrapper">
-                                <div class="slide_description">
-                                    <div class="intro-layer" data-animation="fadeInUp">
-                                      
-                                    </div>
-                                    <div class="intro-layer" data-animation="fadeInUp">
-                                        <h2 class="text-uppercase thin">
-                                            Guaranteed Freshness With
-                                            <br>  Experience
-                                        </h2>
-                                    </div>
-                                    <div class="intro-layer" data-animation="fadeInUp">
-                                        <a href="{{route('about')}}" class="theme_button color1">
-                                About us
-                            </a>
-                                    </div>
-                                </div>
-
-                            </div>
-                            
-            </li>
+@endforeach
+        
 
         </ul>
 
@@ -170,10 +110,12 @@
      
      
         <div class="row columns_margin_bottom_20">
+            @foreach ($products as $product)
             <div class="col-lg-4 col-sm-6">
                 <article class="vertical-item content-padding with_border color2_border rounded">
+                    
                     <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                        <img src="/images/events/new/mango5.jpg" alt="fresh-kenya-mangoes">
+                        <img src="{{ URL::to('/') }}/SosioFruits_Products/{{$product->productphotos->where('type','main_image')->pluck('image_path')->first()}}" alt="{{$product->product}}">
                         <div class="media-links">
                         </div>
                     </div>
@@ -181,310 +123,25 @@
                         <header class="content-justify">
                             <div>
                                 <h4 id="product-header">
-                                    <a href="{{route('mangoes')}}">
-                            Mangoes<br> 
+                                    <a href="{{route('product.details',$product->id)}}">
+                            {{$product->product}}<br> 
                         </a>
                                 </h4>
-                                <p id="text-export">Kenyan mangos stand tall among the best mangos in the world, making Kenya a key source of juicy and healthy mangos to the world’s leading mango markets.We exports fresh and healthy Kenya mangos to the rest of the world</p>
+                                <p id="text-export">{{$product->slug}}</p>
                             </div>
                             <div>
-                                <p class="price-big highlight text-right">
-                    </p>
+                     
                             </div>
                         </header>
                      
                 </article>
             </div>
+            @endforeach
+          
 
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/new/passion4.jpg" alt="kenya-passion-fruit">
-                                <div class="media-links">
-                                  
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('passion_fruit')}}">
-                                    Passion Friut<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">We are happy to supply high quality Kenya passion fruits, grown and maintained by the ever dedicated family farmers from whom we source.Enjoy the best of this fruit by getting it from the best exporters of it!</p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color3_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/new/avocado5.jpg" alt="kenya-fresh-avocado">
-                                <div class="media-links">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('avocadoes')}}">
-                                    Avocadoes<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">A lovely fruit with fast rising global demand. This simple natural fruit is amazingly high in healthy fats with attractive benefits to the body.We exports fresh and healthy Kenya avocados to the rest of the world and also serve the local market </p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color2_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/spices1.jpeg" alt="kenya-spices">
-                                <div class="media-links">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('spices')}}">
-                                         Spices<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">Spicy food is yummy food.With our great collection of spices freshly produced from our rich Kenyan soils,sorted for the best we deliver them to you to make that meal spicier than before.They include Ginger,Tumeric,Pepper and Garlic</p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/tamarillos.jpg" alt="fresh-kenya-tree-tomato">
-                                <div class="media-links">
-                                  
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('tree_tomato')}}">
-                                                Tree Tomato<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">The tree tomato is a small oval-shaped fruit like a medium sized tomato and tastes almost like a tomato.With huge amounts of Vitamin(A,C & E) the tree tomato has been essntial in making jam,preserves,jellies,salsa and   relishes</p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color3_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/herbs1.jpeg" alt="fresh-herbs-from-kenya">
-                                <div class="media-links">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('herbs')}}">
-                                    Herbs<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">Herbs are mostly know for their medicinal value across the globe.Organic herbs are now the trend in most parts of the world.With a wide variety of them including mint,thyme,chives we selsct from the best and deliver it to you at your comfort</p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
+             
         </div>
-        <div class="row columns_margin_bottom_20">
-            <div class="col-lg-4 col-sm-6">
-                <article class="vertical-item content-padding with_border color2_border rounded">
-                    <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                        <img src="/images/events/new/dill.jpeg" alt="dill-in-kenya">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <header class="content-justify">
-                            <div>
-                                <h4 id="product-header">
-                                    <a href="{{route('dill')}}">
-                            Dill<br> 
-                        </a>
-                                </h4>
-                                <p id="text-export"> Our dill is sourced from small scale farmers and provides it for the local and export market. We understand the importance of fresh, well-grown dill and that is why we can confidently promise fresh  dill from Kenya.</p>
-                            </div>
-                            <div>
-                                <p class="price-big highlight text-right">
-                    </p>
-                            </div>
-                        </header>
-                     
-                </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/apple5.jpeg" alt="kenya-fresh-apples">
-                                <div class="media-links">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('apples')}}">
-                                    Apples<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">'An apple a day keeps the doctor away'.We exports fresh and healthy  apples worldwide.Our Apples are well selected and graded for best quality and customer satisfaction.Varieties include Custard apples </p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color3_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/new/oregano2.jpg" alt="kenya-seedless-watermellon">
-                                <div class="media-links">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('oregano')}}">
-                                    Oregano<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">Oregano is a culinary and medicinal herb from the mint family.Kenya has the perfect conditions for growing oregano: a full sun as well as rich and well drained soils. Feel free to experiment with Kenya oregano.</p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color2_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/butternut5.jpeg" alt="kenya-butternut">
-                                <div class="media-links">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('butternut')}}">
-                                         Butternut<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">Butternut is a vine like plant and most common among the winter–squash vegetables.Known for preventing asthma and body weight regulation due to its high fibre,we carefully select it for you and ship it to you at your convinience</p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                <article class="vertical-item content-padding with_border color_border rounded">
-                    <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                        <img src="/images/events/beetroot3.jpg" alt="organic-kenya-beetroot">
-                        <div class="media-links">
-                        </div>
-                    </div>
-                    <div class="item-content">
-                        <header class="content-justify">
-                            <div>
-                                <h4 id="product-header">
-                                    <a href="{{route('beetroot')}}">
-                            Beetroot<br> 
-                        </a>
-                                </h4>
-                                <p id="text-export">Kenyan beetroot is a hearty nutritious vegetative fruit with a healthy pink color at the fruit, root and stem with the leaves a clear green.We source Kenya beetroot from the best family growers and provide them to the local and export market</p>
-                            </div>
-                            <div>
-                                <p class="price-big highlight text-right">
-                    </p>
-                            </div>
-                        </header>
-                     
-                </article>
-            </div>
-
-            <div class="col-lg-4 col-sm-6">
-                    <article class="vertical-item content-padding with_border color3_border rounded">
-                            <div class="item-media top_rounded overflow_hidden" id="img-susan">
-                                <img src="/images/events/new/broccoli5.jpg" alt="organic-kenya-broccoli">
-                                <div class="media-links">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <header class="content-justify">
-                                    <div>
-                                        <h4 id="product-header">
-                                            <a href="{{route('brocolli')}}">
-                                    Brocolli<br> 
-                                </a>
-                                        </h4>
-                                        <p id="text-export">Broccoli is nature’s super food .Long known for it’s unique texture and taste, broccoli is  widely recognized for its superior health and nutritional value.We happen to be Kenya’s proud exporter of Kenyan  broccoli! Hit us up for the best Broccoli  </p>
-                                    </div>
-                                    <div>
-                                        <p class="price-big highlight text-right">
-                            </p>
-                                    </div>
-                                </header>
-                             
-                        </article>
-            </div>
-        </div>
+     
     </div> 
 </section>
 

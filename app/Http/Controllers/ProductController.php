@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Seo;
 use App\Category;
 use App\ProductPhoto;
 use Illuminate\Http\Request;
@@ -61,7 +62,8 @@ class ProductController extends Controller
                 'category_id' => 'required',
                 'product' => 'required',
                 'description' => 'required',
-                'price' => 'required',
+                'slug' => 'required',
+                // 'price' => 'required',
                 'main_image' => 'required',
                 'gallery' => 'required',
     
@@ -89,11 +91,13 @@ class ProductController extends Controller
                 $gallerarray[] = $galleryname;
             }
         }
+        // dd($request->description);
         $product = new Product();
         $product->category_id = $request->category_id;
         $product->product = $request->product;
-        $product->price = $request->price;
+        // $product->price = $request->price;
         $product->description = $request->description;
+        $product->slug = $request->slug;
         if ($product->save()) {
 
             $product_id= $product->id;
@@ -176,7 +180,7 @@ class ProductController extends Controller
             'category_id' => 'required',
             'product' => 'required',
             'description' => 'required',
-            'price' => 'required',
+            'slug' => 'required',
 
         ];
 
@@ -219,7 +223,7 @@ class ProductController extends Controller
             'category_id'=>$request->category_id,
             'product'=>$request->product,
             'description'=>$request->description,
-            'price'=>$request->price
+            'slug'=>$request->slug
         ]);
         // }
         return response([
@@ -270,7 +274,34 @@ class ProductController extends Controller
         
         }
          }
+         public function productDetails($id){
+            $category_id = Product::where('id',$id)->pluck('category_id')->first();
+            $relateds = Product::where('category_id',$category_id)->get();
+            $products =Product::where('id',$id)->get();
+            $productphotos =ProductPhoto::where('product_id',$id)->get();
 
+            $seos = Seo::where('product_id',$id)->get();
+            if (!$seos->isEmpty()) {
+                foreach ($seos as $seo) {
+                    $meta_description =$seo->meta_description;
+                    $meta_keyword =$seo->meta_keyword;
+                    
+                }
+            }else{
+
+                $meta_description ='Sosio Fruits and Vegetables';
+                $meta_keyword ='Kenyan expoerters of fruits and vegetables';
+            }
+            
+            
+             $meta_author ="Mwangi David Muthui|0721257308";
+             $meta_site_title ="Sosio Fruits and Vegetables";
+             foreach ($products as $product) {
+                $meta_title =$product->product.''."|Sosio Fruits and Vegetables";
+            $name =$product->product; 
+             }
+            return view ('export.product_details',compact('meta_title','meta_description','meta_keyword','meta_url','meta_site_title,name','productphotos','products','relateds'));
+         }
 
          
     

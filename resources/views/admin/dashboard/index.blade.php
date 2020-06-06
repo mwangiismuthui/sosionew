@@ -12,8 +12,8 @@
             <div class="card-body">
               <div class="media align-items-center">
                 <div class="media-body text-left">
-                <h4 class="text-info mb-0"></h4>
-                  <span>New Orders</span>
+                <h4 class="text-info mb-0">{{$products_count}}</h4>
+                  <span>Products</span>
                 </div>
                 <div class="align-self-center w-circle-icon rounded-circle gradient-scooter">
                   <i class="icon-basket-loaded text-white"></i></div>
@@ -29,7 +29,7 @@
               <div class="media align-items-center">
                 <div class="media-body text-left">
                 <h4 class="text-danger mb-0"></h4>
-                  <span>Orders Inprogress</span>
+                  <span>Coming Soon</span>
                 </div>
                 <div class="align-self-center w-circle-icon rounded-circle gradient-bloody">
                   <i class="icon-wallet text-white"></i></div>
@@ -45,7 +45,7 @@
               <div class="media align-items-center">
                 <div class="media-body text-left">
                 <h4 class="text-success mb-0"></h4>
-                  <span>Completed Orders</span>
+                  <span>Coming Soon</span>
                 </div>
                 <div class="align-self-center w-circle-icon rounded-circle gradient-quepal">
                   <i class="icon-pie-chart text-white"></i></div>
@@ -60,8 +60,8 @@
             <div class="card-body">
               <div class="media align-items-center">
                 <div class="media-body text-left">
-                <h4 class="text-warning mb-0">{</h4>
-                  <span>Total Services</span>
+                <h4 class="text-warning mb-0"></h4>
+                  <span>Coming Soon</span>
                 </div>
                 <div class="align-self-center w-circle-icon rounded-circle gradient-blooker">
                   <i class="icon-user text-white"></i></div>
@@ -73,25 +73,7 @@
     </div>
     <!--End Row-->
 
-    
-    <div class="row">
-      <div class="col-12 col-lg-12 col-xl-12">
-        <div class="card">
-          <div class="card-header">
-            Service Sales
-            <div class="card-action">
-              <div class="dropdown">
-                
-               </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="chart-container-1">
-              <canvas id="dashboard-chart-1"></canvas>
-            </div>
-          </div>
-        </div>
-      </div>
+   
 
      
 

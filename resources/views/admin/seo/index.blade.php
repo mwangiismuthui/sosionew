@@ -6,18 +6,19 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header"><i class="fa fa-table"></i> Services
+                    <div class="card-header"><i class="fa fa-table"></i> Seo
                         <a href="#" class="btn btn-info btn-round waves-effect waves-light m-1" data-toggle="modal"
-                        data-target="#servicemodal">Add Service</a>
+                        data-target="#seomodal">Add Seo</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="service_table" class="table table-bordered ">
+                            <table id="seo_table" class="table table-bordered ">
                                 <thead>
                                
-                                        <th>Service</th>
-                                        <th>Description</th>
-                                        <th>Action</th>
+                                    <th>Product</th>
+                                    <th>Meta Description</th>
+                                    <th>Meta Keywords</th>
+                                    <th>Action</th>
                                 
                                 </thead>
                                  <tbody>
@@ -25,8 +26,9 @@
                                 </tbody> 
                                 <tfoot>
                                 
-                                    <th>Service</th>
-                                    <th>Description</th>
+                                    <th>Product</th>
+                                    <th>Meta Description</th>
+                                    <th>Meta Keywords</th>
                                     <th>Action</th>
                                  
                                 </tfoot>
@@ -42,40 +44,42 @@
 
 
 <!-- Modal -->
-<div class="modal fade servicemodal" id="servicemodal">
+<div class="modal fade seomodal" id="seomodal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title"><i class="fa fa-star"></i> Add Service</h5>
+                <h5 class="modal-title"><i class="fa fa-star"></i> Add Seo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form id="service_add" method="POST" enctype="multipart/form-data" >
+                <form id="seo_add" method="POST" >
                     @csrf
                     <div class="form-group">
                         <label for="title">Service Name</label>
-                        <input type="text" class="form-control form-control-rounded" id="service"
-                            placeholder="Enter Service Name" name="service">
+                        <select name="product_id" id="" class="form-control form-control-rounded">
+                            <option value="">Select Product</option>
+                            @foreach ($products as $product)
+                                
+                        <option value="{{$product->id}}">{{$product->product}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea name="description" id="description" cols="30" rows="10" class="form-control form-control-rounded">
+                        <label for="description">Meta Description</label>
+                        <textarea name="meta_description" id="meta_description" cols="30" rows="10" class="form-control form-control-rounded">
+
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Meta Keywords</label>
+                        <textarea name="meta_keyword" id="meta_keywords" cols="30" rows="10" class="form-control form-control-rounded">
 
                         </textarea>
                     </div>
                   
-                    <div class="form-group">
-                        <label for="main_image">Main Sevirce Image</label>
-                        <input type="file" class="form-control form-control-rounded" id="main_image"
-                            placeholder="Enter Service Main Name" name="main_image">
-                    </div>
-                    <div class="form-group">
-                        <label for="gallery">Additional Images</label>
-                        <input type="file" class="form-control form-control-rounded" id="gallery"
-                            placeholder="Enter Service Additional Images" name="gallery[]">
-                    </div>
+                  
                  
 
 
@@ -94,13 +98,14 @@
 
 <script>
 
-        var table = $('#service_table').DataTable({
+        var table = $('#seo_table').DataTable({
         processing: true,
         serverSide: true,    
-        ajax: "{{ route('service.index')}}",
+        ajax: "{{ route('seo.index')}}",
         columns:[
-        {data: 'service', name: 'service'},
-        {data: 'description', name: 'description'},
+        {data: 'product.product', name: 'product.product'},
+        {data: 'meta_description', name: 'meta_description'},
+        {data: 'meta_keyword', name: 'meta_keyword'},
         {data: 'action', name: 'action', orderable: false, searchable: false},
         ],
         columnDefs:[
@@ -112,13 +117,13 @@
 
 
 
-   function servicedelete(service_id) {
-       console.log(service_id);
+   function seodelete(seo_id) {
+       console.log(seo_id);
     $.ajax({
-           url:'/service/destroy/',
+           url:'/seo/destroy/',
            method:'delete',
            data:{
-               service_id:service_id,
+               seo_id:seo_id,
                  _token: "{{ csrf_token() }}",
            },
            success:function(data){
@@ -142,7 +147,7 @@
                      });
 
                 }
-             $('#service_table').DataTable().ajax.reload();
+             $('#seo_table').DataTable().ajax.reload();
            }
 
        });
@@ -150,10 +155,10 @@
 
 
 
-    $("#service_add").on("submit", function (event) {
+    $("#seo_add").on("submit", function (event) {
         event.preventDefault();
         $.ajax({
-            url: "/service/store",
+            url: "/seo/store",
             method: "POST",
             data: new FormData(this),
             contentType: false,
@@ -163,7 +168,7 @@
             success:function(data){
 
             console.log("success");
-               if (data.errors) {
+             if (data.errors) {
                     Lobibox.notify("error", {
                         pauseDelayOnHover: true,
                         continueDelayOnInactiveTab: false,
@@ -183,8 +188,8 @@
 
                 }
 
-                $('#servicemodal').modal('hide');
-                $('#service_table').DataTable().ajax.reload();
+                $('#seomodal').modal('hide');
+                $('#seo_table').DataTable().ajax.reload();
             },
             error: function () {
             Lobibox.notify("error", {

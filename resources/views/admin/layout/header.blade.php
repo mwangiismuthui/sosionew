@@ -34,14 +34,14 @@
           </li>
           <li class="dropdown-divider"></li>
           <li class="dropdown-item"><i class="icon-power mr-2"></i>
-            {{-- <a ref="{{ route('logout') }}" onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a> --}}
+            <a ref="{{ route('logout') }}" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
           </li>
         </ul>
       </li>
     </ul>
   </nav>
-  {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     @csrf
-  </form> --}}
+  </form>
 </header>

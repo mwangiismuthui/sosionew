@@ -14,8 +14,8 @@ class CreateSeosTable extends Migration
     public function up()
     {
         Schema::create('seos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('product_id');
+            $table->uuid('id')->primary();
+            $table->uuid('product_id');
             $table->longText('meta_description');
             $table->longText('meta_keyword');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');

@@ -12,6 +12,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Yajra\Datatables\Datatables;
 use Symfony\Component\HttpFoundation\Response;
+
+
 class ProductController extends Controller
 {
     /**
@@ -28,12 +30,12 @@ class ProductController extends Controller
             return Datatables::of($product)
                 ->addIndexColumn()
                 ->addColumn('action', function ($data) {
-                    return '<a class="btn btn-outline-danger btn-round waves-effect waves-light name="delete" id="' . $data->id . '" onclick="productdelete(\'' . $data->id . '\')"><i class="icon-trash"></i>Delete</a>&nbsp;&nbsp;<a class="btn btn-outline-warning btn-round waves-effect waves-light name="edit" href="' . route('product.edit', $data->id) . '" id="' . $data->id . '" ><i class="ti-pencil"></i>Edit</a>';
+                    return '<a class="btn btn-outline-danger btn-round waves-effect waves-light name="delete" id="' . $data->id . '" onclick="productdelete(\'' . $data->id . '\')"><i class="icon-trash"></i>Delete</a>&nbsp;&nbsp;<a class="btn btn-outline-warning btn-round waves-effect waves-light name="edit" href="' . route('product.edit', $data->slug) . '" id="' . $data->id . '" ><i class="ti-pencil"></i>Edit</a>';
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
-// dd($categories);
+
         return view ('admin.product.index',compact('categories'));
     }
 
@@ -62,22 +64,25 @@ class ProductController extends Controller
                 'category_id' => 'required',
                 'product' => 'required',
                 'description' => 'required',
-                'slug' => 'required',
+                'slug' => 'required|unique:products',
                 // 'price' => 'required',
                 'main_image' => 'required',
                 'gallery' => 'required',
-    
+
             ];
-    
+
             $error = Validator::make($request->all(), $rules);
-    
+
             if ($error->fails()) {
                 return response([
                     'errors'=>True,
                     'message'=>$error->errors()->all(),
                 ],Response::HTTP_OK);
             }
-        
+
+        $slug = Str::slug($request->slug, '-');
+
+
         $imgdestination = '/SosioFruits_Products';
         $gallerarray = [];
         if ($request->hasfile('main_image')) {
@@ -91,13 +96,17 @@ class ProductController extends Controller
                 $gallerarray[] = $galleryname;
             }
         }
+
+
+
+
         // dd($request->description);
         $product = new Product();
         $product->category_id = $request->category_id;
         $product->product = $request->product;
         // $product->price = $request->price;
         $product->description = $request->description;
-        $product->slug = $request->slug;
+        $product->slug = $slug;
         if ($product->save()) {
 
             $product_id= $product->id;
@@ -119,7 +128,7 @@ class ProductController extends Controller
                 'success'=>True,
                 'message'=>'Product  created Succesfully',
             ],Response::HTTP_OK);
-            
+
         }
     }
 
@@ -153,14 +162,14 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,$id)
+    public function edit(Request $request,$slug)
     {
         $categories = Category::all();
-        $products =Product::where('id',$id)->get();
-        $photos =ProductPhoto::where('product_id',$id)->get();
-      
-        
-        
+        $products =Product::where('slug',$slug)->get();
+        $photos =ProductPhoto::where('product_id',$products[0]['id'])->get();
+
+
+
 
         return view ('admin.product.edit',compact('categories','products','photos'));
     }
@@ -172,15 +181,17 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id){
-      
-        
+    public function update(Request $request,$slug){
+
+       $product =  Product::where('slug',$slug)->get();
+       $id = $product[0]['id'];
+
         // dd($request->price);
         $rules = [
             'category_id' => 'required',
             'product' => 'required',
             'description' => 'required',
-            'slug' => 'required',
+            'slug' => 'required' ,
 
         ];
 
@@ -205,12 +216,12 @@ class ProductController extends Controller
             ]);
         }
         if ($request->hasfile('gallery')) {
-    
+
             foreach ($request->file('gallery') as $image) {
                 $galleryname = $this->generateUniqueFileName($image, $imgdestination);
                 $gallerarray[] = $galleryname;
             }
-    
+
             foreach ($gallerarray as $img) {
                 ProductPhoto::where('product_id',$id)
                 ->where('type','=','gallery')
@@ -219,18 +230,22 @@ class ProductController extends Controller
                 ]);
             }
         }
-        Product::where('id',$id)->update([
+
+
+        $slug = Str::slug($request->slug, '-');
+
+        Product::where('slug',$slug)->update([
             'category_id'=>$request->category_id,
             'product'=>$request->product,
             'description'=>$request->description,
-            'slug'=>$request->slug
+            'slug'=>$slug
         ]);
         // }
         return response([
             'success'=>True,
             'message'=>'Product Updated Succesfully',
         ],Response::HTTP_OK);
-    
+
      }
 
     /**
@@ -257,7 +272,7 @@ class ProductController extends Controller
             ],Response::HTTP_OK);
         }
         }
-    
+
     }
     public function photoDestroy(Request $request){
         $photo_id = $request->photo_id;
@@ -271,7 +286,7 @@ class ProductController extends Controller
                 'error'=>True,
                 'message'=>'Photo not deleted ',
             ],Response::HTTP_OK);
-        
+
         }
          }
          public function productDetails($id){
@@ -281,28 +296,31 @@ class ProductController extends Controller
             $productphotos =ProductPhoto::where('product_id',$id)->get();
 
             $seos = Seo::where('product_id',$id)->get();
+            // dd($products[0]['slug']);
+
             if (!$seos->isEmpty()) {
                 foreach ($seos as $seo) {
                     $meta_description =$seo->meta_description;
                     $meta_keyword =$seo->meta_keyword;
-                    
+
                 }
             }else{
 
                 $meta_description ='Sosio Fruits and Vegetables';
                 $meta_keyword ='Kenyan expoerters of fruits and vegetables';
             }
-            
-            
+
+
              $meta_author ="Mwangi David Muthui|0721257308";
              $meta_site_title ="Sosio Fruits and Vegetables";
+             $meta_url ="sosiofruitsandvegetables.com/fresh-fruits/kenyan-avocadoes";
              foreach ($products as $product) {
                 $meta_title =$product->product.''."|Sosio Fruits and Vegetables";
-            $name =$product->product; 
+            $name =$product->product;
              }
-            return view ('export.product_details',compact('meta_title','meta_description','meta_keyword','meta_url','meta_site_title,name','productphotos','products','relateds'));
+            return view ('export.product_details',compact('meta_title','meta_description','meta_keyword','meta_url','meta_site_title', 'name', 'productphotos','products','relateds'));
          }
 
-         
-    
+
+
 }

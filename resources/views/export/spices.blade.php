@@ -10,9 +10,9 @@
                 Home
             </a>
                     </li>
-                    <li>
+                   {{--   <li>
                         <a href="{{route('products')}}">Product</a>
-                    </li>
+                    </li>  --}}
                     <li class="active">Spices</li>
                 </ol>
             </div>
@@ -33,8 +33,8 @@
                     <div class="col-sm-6">
                         <div class="item-media images muted_background text-center rounded overflow_hidden" id="">
 
-                            <a href="/images/events/pepper.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                <img src="/images/events/pepper2.jpg" class="attachment-shop_single wp-post-image" alt="kenya-pepper" title="" >
+                            <a href="{{asset('images/events/new/pepper.jpg')}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                <img src="{{asset('images/events/new/pepper.jpg')}}" class="attachment-shop_single wp-post-image" alt="kenya-pepper" title="" >
                             </a>
 
                             <div class="cs main_color entry-meta media-meta vertical-center text-center">
@@ -44,12 +44,12 @@
                                     </span>
                                 </div>
                                 <div>
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <!--eof .images -->
-                   
+
                         <!-- eof .images -->
                     </div>
 
@@ -76,9 +76,9 @@
                             Order Pepper Now
                           </a>
 
-                      
 
-                       
+
+
 
                     </div>
                     <!-- .summary.col- -->
@@ -93,11 +93,11 @@
 
                         <div class="col-sm-6">
                             <div class="item-media images muted_background text-center rounded overflow_hidden" id="">
-    
-                                <a href="/images/events/tumeric.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                    <img src="/images/events/tumeric.jpg" class="attachment-shop_single wp-post-image" alt="kenya-tumeric" title="">
+
+                                <a href="{{asset('images/events/new/tumeric.jpg')}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                    <img src="{{asset('images/events/new/tumeric.jpg')}}" class="attachment-shop_single wp-post-image" alt="kenya-tumeric" title="">
                                 </a>
-    
+
                                 <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
                                     <div class="price weight-black fontsize_30">
                                         <span>
@@ -105,21 +105,21 @@
                                         </span>
                                     </div>
                                     <div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
                             <!--eof .images -->
-                       
+
                             <!-- eof .images -->
                         </div>
-    
+
                         <div class="summary entry-summary col-sm-6">
-    
-    
+
+
                             <h2 itemprop="name" class="product_title ">Tumeric</h2>
-    
-    
+
+
                             <div>
                                 <p>Turmeric, often referred to as the super food due to its powerful natural anti-flammatory and antioxidant properties, falls under the ginger family.Kenya Turmeric is an exciting spice with a warm and peppery taste.</p>
                                 <p>Sosio exporters is proud to obtain the herb from local well trained farmers and provide the best turmeric from Kenya. High-yield and quality varieties native to Kenya have been widely grown in the country and the production level has been excellent</p>
@@ -128,14 +128,14 @@
                             <a href="{{route('order')}}" class="theme_button color2">
                                 Order Tumeric Now
                               </a>
-    
-                         
-    
-                           
-    
+
+
+
+
+
                         </div>
                         <!-- .summary.col- -->
-    
+
                     </div>
                     <!-- .product.row -->
 
@@ -146,11 +146,11 @@
 
                         <div class="col-sm-6">
                             <div class="item-media images muted_background text-center rounded overflow_hidden" id="" >
-    
-                                <a href="/images/events/ginger3.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                    <img src="/images/events/ginger3.jpg" class="attachment-shop_single wp-post-image" alt="kenya-ginger" title="">
+
+                                <a href="{{asset('images/events/new/ginger.jpg')}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                    <img src="{{asset('images/events/new/ginger.jpg')}}" class="attachment-shop_single wp-post-image" alt="kenya-ginger" title="">
                                 </a>
-    
+
                                 <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
                                     <div class="price weight-black fontsize_30">
                                         <span>
@@ -158,38 +158,38 @@
                                         </span>
                                     </div>
                                     <div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
                             <!--eof .images -->
-                       
+
                             <!-- eof .images -->
                         </div>
-    
+
                         <div class="summary entry-summary col-sm-6">
-    
-    
+
+
                             <h2 itemprop="name" class="product_title ">Ginger</h2>
-    
-    
+
+
                             <div>
                                 <p>Ginger is so versatile and apart from its sweet pungent taste coupled with a mouth watery perfume scent, it serves as an antioxidant that features many health benefits such as flu, migraines fatigue etc. ginger can also be used for cosmetic purposes. With such, it is hard not to fall in love with ginger. This is a must have ingredient in every chef’s recipe, specifically Kenyan ginger.</p>
                                 <p> The secret of making mouth tantalizing meals lies in using true and authentic spices. Kenya is known for its authentic herbal spices with ginger being a top in this category. The Kenyan climate sets a perfect platform for producing the best variety of ginger, befitting consumption both locally and globally.</p>
                                 <p>Ginger that comes directly from us is for those who prefer nothing but the best: we source it only from reliable farmers at its most natural and fresh.  By choosing to buy from us, you are making a safe decision because we guarantee the highest quality of Kenya ginger.</p>
                             </div>
-    
-                        
+
+
                             <a href="{{route('order')}}" class="theme_button color3">
                                 Order Ginger Now
                               </a>
-                           
-    
+
+
                         </div>
                         <!-- .summary.col- -->
-    
+
                     </div>
-                   
+
 
                 <div class="row topmargin_50">
                     <div class="col-sm-12">
@@ -201,7 +201,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" >
                                     <a href="{{route('carrots')}}">
-                                        <img src="/images/events/carrot1.jpg" alt="kenya-carrot"  style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/carrot.jpg')}}" alt="kenya-carrot"  style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -211,12 +211,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
 
@@ -224,7 +224,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" >
                                     <a href="{{route('cabbage')}}">
-                                        <img src="/images/events/cabbage2.jpg" alt="cabbage-in-kenya"  style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/cabbage.jpg')}}" alt="cabbage-in-kenya"  style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
@@ -234,18 +234,18 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                          
+
                             </div>
 
                             <div class="vertical-item product text-center">
                                 <div class="item-media muted_background rounded overflow_hidden" >
                                     <a href="{{route('beetroot')}}">
-                                        <img src="/images/events/beetroot3.jpg" alt="kenya-beetroot"  style="height:235px !important;">
+                                        <img src=" {{asset('images/events/new/beetroot.jpg')}}" alt="kenya-beetroot"  style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color4 entry-meta media-meta vertical-center text-center">
@@ -255,12 +255,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                          
+
                                         </div>
                                     </div>
                                 </div>
 
-                            
+
 
                             </div>
 
@@ -268,7 +268,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" >
                                     <a href="{{route('brocolli')}}">
-                                        <img src="/images/events/broccoli5.jpeg" alt="fresh-kenya-broccoli"  style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/broccoli5.jpg')}}" alt="fresh-kenya-broccoli"  style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -278,7 +278,7 @@
                                             </span>
                                         </div>
                                         <div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>

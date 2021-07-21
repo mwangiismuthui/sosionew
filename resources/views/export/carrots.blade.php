@@ -10,9 +10,9 @@
                 Home
             </a>
                     </li>
-                    <li>
+                    {{--  <li>
                         <a href="{{route('products')}}">Product</a>
-                    </li>
+                    </li>  --}}
                     <li class="active">Carrots</li>
                 </ol>
             </div>
@@ -33,8 +33,8 @@
                     <div class="col-sm-6">
                         <div class="item-media images muted_background text-center rounded overflow_hidden" >
 
-                            <a href="/images/events/carrot2.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                <img src="/images/events/carrot2.jpg" class="attachment-shop_single wp-post-image" alt="kenya-baby-carrots" title="" >
+                            <a href=" {{asset('images/events/new/carrot.jpg')}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                <img src="{{asset('images/events/new/carrot.jpg')}}" class="attachment-shop_single wp-post-image" alt="kenya-baby-carrots" title="" >
                             </a>
 
                             <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -44,33 +44,12 @@
                                     </span>
                                 </div>
                                 <div>
-                                  
+
                                 </div>
                             </div>
                         </div>
-                        <br><br>
-                        <div class="item-media images muted_background text-center rounded overflow_hidden" >
-
-                            <a href="/images/events/koruda.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                <img src="/images/events/koruda.jpg" class="attachment-shop_single wp-post-image" alt="Koruda-in kenya" title="" >
-                            </a>
-
-                            <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
-                                <div class="price weight-black fontsize_30">
-                                    <span>
-                                        <span class="amount">Super Kuroda</span>
-                                    </span>
-                                </div>
-                                <div>
-                                  
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-
                         <!--eof .images -->
-                   
+
                         <!-- eof .images -->
                     </div>
 
@@ -97,7 +76,7 @@
                             <h5>Nutritional value</h5>
                             <ol>
                                 <li>Source of beta carotene, a precursor to Vitamin A</li>
-                               
+
                                 <li> Contain Vitamin C, Vitamin K, </li>
                                 <li>Rich in iron and calcium pectate, which has been found to contain cholesterol reducing properties.</li>
                                 <li>High source of Fiber</li>
@@ -107,11 +86,11 @@
                             <a href="{{route('order')}}" class="theme_button color3">
                                 Order Carrots Now
                               </a>
-                           
+
                         </div>
 
-                       
-                       
+
+
 
                     </div>
                     <!-- .summary.col- -->
@@ -119,7 +98,7 @@
                 </div>
                 <!-- .product.row -->
 
-                    
+
 
                 <div class="row topmargin_50">
                     <div class="col-sm-12">
@@ -131,7 +110,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden">
                                     <a href="{{route('cabbage')}}">
-                                        <img src="/images/events/cabbage2.jpg" alt="Fresh-kenyan-cabbages" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/cabbage.jpg')}}" alt="Fresh-kenyan-cabbages" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -141,12 +120,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
 
@@ -154,7 +133,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden">
                                     <a href="{{route('lemon_grass')}}">
-                                        <img src="/images/events/lemongrass5.jpg" alt="Kenyan-lemon-grass" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/lemonGrass.jpg')}}" alt="Kenyan-lemon-grass" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
@@ -164,18 +143,18 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                          
+
                             </div>
 
                             <div class="vertical-item product text-center">
                                 <div class="item-media muted_background rounded overflow_hidden" >
                                     <a href="{{route('brocolli')}}">
-                                        <img src="/images/events/broccoli5.jpeg" alt="fresh-kenyan-brocolli" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/broccoli5.jpg')}}" alt="fresh-kenyan-brocolli" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color4 entry-meta media-meta vertical-center text-center">
@@ -185,12 +164,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                          
+
                                         </div>
                                     </div>
                                 </div>
 
-                            
+
 
                             </div>
 
@@ -198,7 +177,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" >
                                     <a href="{{route('beetroot')}}">
-                                        <img src="/images/events/beetroot3.jpg" alt="organic-kenyan-beetroot" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/beetroot.jpg')}}" alt="organic-kenyan-beetroot" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -208,7 +187,7 @@
                                             </span>
                                         </div>
                                         <div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>

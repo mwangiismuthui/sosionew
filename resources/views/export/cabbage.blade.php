@@ -10,9 +10,9 @@
                 Home
             </a>
                     </li>
-                    <li>
+                    {{--  <li>
                         <a href="{{route('products')}}">Product</a>
-                    </li>
+                    </li>  --}}
                     <li class="active">Cabbage</li>
                 </ol>
             </div>
@@ -33,8 +33,8 @@
                     <div class="col-sm-6">
                         <div class="item-media images muted_background text-center rounded overflow_hidden" >
 
-                            <a href="/images/events/cabbage2.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                <img src="/images/events/cabbage2.jpg" class="attachment-shop_single wp-post-image" alt="cabbage-grown-in-kenya" title="" >
+                            <a href=" {{asset('images/events/new/cabbage.jpg')}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                <img src="{{asset('images/events/new/cabbage.jpg')}}" class="attachment-shop_single wp-post-image" alt="cabbage-grown-in-kenya" title="" >
                             </a>
 
                             <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
@@ -44,12 +44,12 @@
                                     </span>
                                 </div>
                                 <div>
-                                  
+
                                 </div>
                             </div>
                         </div>
                         <!--eof .images -->
-                   
+
                         <!-- eof .images -->
                     </div>
 
@@ -66,15 +66,15 @@
                             <p>We are the best source of this vegetable, sourced from committed family growers in Kenya.</p>
                             <h5 style="text-align:center;">Our Varieties</h5>
                             <ol>
-                               <li>Gloria F1</li> 
+                               <li>Gloria F1</li>
                                <li>Pruktor F1</li>
-                               <li>Riana F1</li> 
-                               <li>Queen F1</li> 
-                               <li>Serena F1</li> 
-                               </ol> 
+                               <li>Riana F1</li>
+                               <li>Queen F1</li>
+                               <li>Serena F1</li>
+                               </ol>
                                  <h5 style="text-align:center;">Nutritional Value</h5>
                                <ol>
-                                   <li> Vitamin C, also known as ascorbic acid, is a water-soluble vitamin that serves many important roles in the body.</li> 
+                                   <li> Vitamin C, also known as ascorbic acid, is a water-soluble vitamin that serves many important roles in the body.</li>
                                  <li>Good source of dietary fibre, which facilitates good digestion</li>
                                    <li>Helps in Keeping Your Heart Healthy</li>
                                 <li>  Lower Blood Pressure</li>
@@ -84,9 +84,9 @@
                                   </a>
                         </div>
 
-                      
 
-                       
+
+
 
                     </div>
                     <!-- .summary.col- -->
@@ -94,7 +94,7 @@
                 </div>
                 <!-- .product.row -->
 
-                    
+
 
                 <div class="row topmargin_50">
                     <div class="col-sm-12">
@@ -106,7 +106,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('carrots')}}">
-                                        <img src="/images/events/carrot1.jpg" alt="carrots-grown-in-kenya">
+                                        <img src=" {{asset('images/events/new/carrot.jpg')}}" alt="carrots-grown-in-kenya">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -116,12 +116,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
 
@@ -129,7 +129,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="s{{route('lemon_grass')}}">
-                                        <img src="/images/events/lemongrass5.jpg" alt="lemon-grass">
+                                        <img src=" {{asset('images/events/new/lemonGrass.jpg')}}" alt="lemon-grass">
                                     </a>
 
                                     <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
@@ -139,18 +139,18 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                          
+
                             </div>
 
                             <div class="vertical-item product text-center">
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('brocolli')}}">
-                                        <img src="/images/events/broccoli5.jpeg" alt="broccoli" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/broccoli5.jpg')}}" alt="broccoli" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color4 entry-meta media-meta vertical-center text-center">
@@ -160,12 +160,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                          
+
                                         </div>
                                     </div>
                                 </div>
 
-                            
+
 
                             </div>
 
@@ -173,7 +173,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('beetroot')}}">
-                                        <img src="/images/events/beetroot3.jpg" alt="beetroot" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/beetroot.jpg')}}" alt="beetroot" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -183,7 +183,7 @@
                                             </span>
                                         </div>
                                         <div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>

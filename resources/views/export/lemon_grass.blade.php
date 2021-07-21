@@ -10,9 +10,9 @@
                 Home
             </a>
                     </li>
-                    <li>
+                    {{--  <li>
                         <a href="{{route('products')}}">Product</a>
-                    </li>
+                    </li>  --}}
                     <li class="active">Lemon Grass</li>
                 </ol>
             </div>
@@ -33,8 +33,8 @@
                     <div class="col-sm-6">
                         <div class="item-media images muted_background text-center rounded overflow_hidden" >
 
-                            <a href="/images/events/lemongrass5.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                <img src="/images/events/lemongrass5.jpg" class="attachment-shop_single wp-post-image" alt="kenyan-lemon-grass" title="" >
+                            <a href="{{asset('images/events/new/lemonGrass.jpg')}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                <img src=" {{asset('images/events/new/lemonGrass.jpg')}}" class="attachment-shop_single wp-post-image" alt="kenyan-lemon-grass" title="" >
                             </a>
 
                             <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
@@ -44,12 +44,12 @@
                                     </span>
                                 </div>
                                 <div>
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <!--eof .images -->
-                   
+
                         <!-- eof .images -->
                     </div>
 
@@ -81,9 +81,9 @@
                               </a>
                         </div>
 
-                      
 
-                       
+
+
 
                     </div>
                     <!-- .summary.col- -->
@@ -91,7 +91,7 @@
                 </div>
                 <!-- .product.row -->
 
-                    
+
 
                 <div class="row topmargin_50">
                     <div class="col-sm-12">
@@ -103,7 +103,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('carrots')}}">
-                                        <img src="/images/events/carrot1.jpg" alt="Kenyan-baby-carrots" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/carrot.jpg')}}" alt="Kenyan-baby-carrots" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -113,12 +113,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
 
@@ -126,7 +126,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('cabbage')}}">
-                                        <img src="/images/events/cabbage2.jpg" alt="Fresh-Kenyan-Cabbages" style="height:235px !important;">
+                                        <img src=" {{asset('images/events/new/cabbage.jpg')}}" alt="Fresh-Kenyan-Cabbages" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
@@ -136,33 +136,11 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                          
-                            </div>
-
-                            <div class="vertical-item product text-center">
-                                <div class="item-media muted_background rounded overflow_hidden" id="">
-                                    <a href="{{route('brocolli')}}">
-                                        <img src="/images/events/broccoli5.jpeg" alt="organic-kenyan-broccoli" style="height:235px !important;">
-                                    </a>
-
-                                    <div class="cs main_color4 entry-meta media-meta vertical-center text-center">
-                                        <div class="price weight-black fontsize_30">
-                                            <span>
-                                                <span class="amount">Brocolli</span>
-                                            </span>
-                                        </div>
-                                        <div>
-                                          
-                                        </div>
-                                    </div>
-                                </div>
-
-                            
 
                             </div>
 
@@ -170,7 +148,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('beetroot')}}">
-                                        <img src="/images/events/beetroot3.jpg" alt="fresh-kenyan-beetroot" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/beetroot.jpg')}}" alt="fresh-kenyan-beetroot" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -180,7 +158,7 @@
                                             </span>
                                         </div>
                                         <div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>

@@ -23,4 +23,9 @@ class Product extends Model
     public function seo(){
         return $this->hasMany(Seo::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

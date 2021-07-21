@@ -8,7 +8,7 @@
 @foreach ($products as $product)
  <form id="product_add" method="POST"  enctype="multipart/form-data">
     @csrf
- <input type="hidden" name="product_id" id="product_id" value="{{$product->id}}">
+ <input type="hidden" name="product_id" id="product_id" value="{{$product->slug}}">
        <div class="row">
                         <div class="form-group col-md-12">
                             <label for="title">Category</label>
@@ -27,12 +27,12 @@
                             <input type="text" class="form-control form-control-rounded" name="product"
                                 placeholder="Enter Product Name" value="{{$product->product}}">
                         </div>
-                   
+
                     </div>
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label for="main_image">Product Slug</label>
-  
+
                             <textarea name="slug" id="" cols="30" rows="10"
                                 class="form-control form-control-rounded word_count" >
                                 {{$product->slug}}
@@ -112,7 +112,7 @@ $(document).ready(function() {
             $('#word_left').text(40-words);
         }
     });
- }); 
+ });
 
   $('#summernoteEditor').summernote({
             height: 400,
@@ -210,7 +210,7 @@ error:function (data) {
 
             },
         });
-        
+
     }
 
 </script>

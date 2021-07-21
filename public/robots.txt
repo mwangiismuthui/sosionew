@@ -1,29 +1,11 @@
 User-agent: *
 Allow:/
-Allow:/our-products/sosio-fruits-and-vegetables
 Allow:/about-sosio-fruits-and-vegetables
 Allow:/contact-sosio-fruits-and-vegetables
 Allow:/sosio-fruits-and-vegetables/order/online
-Allow:/fresh-fruits/kenya-mangoes
-Allow:/fresh-vegetables/kenya-carrots
-Allow:/fresh-fruits/keyan-avocadoes
-Allow:/fresh-herbs/herbs-in-kenya
-Allow:/fresh-spices/spices-in-kenya
-Allow:/fresh-fruits/kenya-fresh-apples
-Allow:/fresh-fruits/kenya-dill
-Allow:/fresh-fruits/kenya-oregano
-Allow:/fresh-friuts/kenya-tree-tomato
-Allow:/fresh-vegetables/kenya-beetroot
-Allow:/kenya-vegetables/kenya-brocolli
-Allow:/kenya-vegetables/butternut-in-kenya
-Allow:/herbs-in-kenya/kenya-marjoram
-Allow:/fresh-cabbages/cabbages-in-kenya
-Allow:/kenya-thorn-mellon/thorn-mellon
-Allow:/fresh-strawberries/strawberries-in-kenya
-Allow:/fresh-fruits/kenya-passion-fruit
-Allow:/fresh-fruits/kenya-pears
-Allow:/fresh-kenyan-rosemary/rosemary-in-kenya
-Allow:/kenyan-herbs/fresh-curry-leaves
-Allow:/kenya-lemon-grass/fresh-lemon-grass
+Allow:/contact/post
+Allow:/order/post
+Allow:/newsletter
+
 
 Sitemap: http://sosiofruitsandvegetables.com/sitemap.xml

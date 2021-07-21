@@ -10,9 +10,9 @@
                 Home
             </a>
                     </li>
-                    <li>
+                   {{--   <li>
                         <a href="{{route('products')}}">Product</a>
-                    </li>
+                    </li>  --}}
                     <li class="active">Beetroot</li>
                 </ol>
             </div>
@@ -33,8 +33,8 @@
                     <div class="col-sm-6">
                         <div class="item-media images muted_background text-center rounded overflow_hidden" >
 
-                            <a href="/images/events/beetroot3.jpg" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
-                                <img src="/images/events/beetroot3.jpg" class="attachment-shop_single wp-post-image" alt="beetroot-varieties-in-kenya" >
+                            <a href="{{asset('images/events/new/beetroot.jpg')}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+                                <img src="{{asset('images/events/new/beetroot.jpg')}}" class="attachment-shop_single wp-post-image" alt="beetroot-varieties-in-kenya" >
                             </a>
 
                             <div class="cs main_color1 entry-meta media-meta vertical-center text-center">
@@ -44,12 +44,12 @@
                                     </span>
                                 </div>
                                 <div>
-                                
+
                                 </div>
                             </div>
                         </div>
                         <!--eof .images -->
-                   
+
                         <!-- eof .images -->
                     </div>
 
@@ -65,24 +65,24 @@
                             <p>The beetroot from Kenya is a highly nutritious plant and the following is a list of some of its healthy effects on an individual who consumes it as a fruit, cooked vegetable salad or processed juice, regularly</p>
                             <h5 style="text-align:center;">Our Varieties</h5>
                             <ol>
-                                   
+
                                 <li>  Bolt hardy </li>
                                <li>Detroit 6 Rubidus</li>
                                <li>Chioggia Pink</li>
                                <li>Cylindra</li>
                                <li> Burpee’s Golden</li>
-                               
-                               </ol> 
+
+                               </ol>
                                 <h5 style="text-align:center;">Nutritional Value</h5>
                                <ol>
                                    <li>Lowers high blood pressure</li>
-                                   
+
                                    <li>Combats Dementia:</li>
                                    <li>Fights diabetes:</li>
-                                 
+
                                    <li>Improves athleticism:</li>
-                                   
-                                
+
+
                                   </ol>
                             <p>Whether in fresh fruit or juice form, we have it all. We serve the world with the best Kenya beetroot that we source in its freshest form from our dedicated family growers. Make your order today!</p>
                             <a href="{{route('order')}}" class="theme_button color1">
@@ -90,9 +90,9 @@
                               </a>
                         </div>
 
-                     
 
-                       
+
+
 
                     </div>
                     <!-- .summary.col- -->
@@ -100,7 +100,7 @@
                 </div>
                 <!-- .product.row -->
 
-                    
+
 
                 <div class="row topmargin_50">
                     <div class="col-sm-12">
@@ -112,7 +112,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('cabbage')}}">
-                                        <img src="/images/events/cabbage2.jpg" alt="fresh-cabbage-from-kenya"  style="height:227px !important;">
+                                        <img src="{{asset('images/events/new/cabbage.jpg')}}" alt="fresh-cabbage-from-kenya"  style="height:227px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -122,12 +122,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
 
@@ -135,7 +135,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('lemon_grass')}}">
-                                        <img src="/images/events/lemongrass5.jpg" alt="fresh-lemon-grass-kenya" style="height:227px !important;">
+                                        <img src="{{asset('images/events/new/lemonGrass.jpg')}}" alt="fresh-lemon-grass-kenya" style="height:227px !important;">
                                     </a>
 
                                     <div class="cs main_color3 entry-meta media-meta vertical-center text-center">
@@ -145,18 +145,18 @@
                                             </span>
                                         </div>
                                         <div>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
 
-                          
+
                             </div>
 
                             <div class="vertical-item product text-center">
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('brocolli')}}">
-                                        <img src="/images/events/broccoli5.jpeg" alt="broccoli"  style="height:227px !important;">
+                                        <img src="{{asset('images/events/new/broccoli5.jpg')}}" alt="broccoli"  style="height:227px !important;">
                                     </a>
 
                                     <div class="cs main_color4 entry-meta media-meta vertical-center text-center">
@@ -166,12 +166,12 @@
                                             </span>
                                         </div>
                                         <div>
-                                          
+
                                         </div>
                                     </div>
                                 </div>
 
-                            
+
 
                             </div>
 
@@ -179,7 +179,7 @@
 
                                 <div class="item-media muted_background rounded overflow_hidden" id="">
                                     <a href="{{route('butternut')}}">
-                                        <img src="/images/events/butternut5.jpeg" alt="butternut" style="height:235px !important;">
+                                        <img src="{{asset('images/events/new/butternut.jpg')}}" alt="butternut" style="height:235px !important;">
                                     </a>
 
                                     <div class="cs main_color2 entry-meta media-meta vertical-center text-center">
@@ -189,7 +189,7 @@
                                             </span>
                                         </div>
                                         <div>
-                                           
+
                                         </div>
                                     </div>
                                 </div>

@@ -8,10 +8,10 @@
 	<link rel="apple-touch-icon" href="favicon.png">
 
 	<link rel="canonical" href="http://sosiofruitsandvegetables.com/" />
-	<meta name="description" content="{{$meta_description}}"> 
-	<meta name="keywords" content="{{$meta_keyword}}"> 
+	<meta name="description" content="{{$meta_description}}">
+	<meta name="keywords" content="{{$meta_keyword}}">
 	{{-- <meta name="url" content="{{$meta_url}}"> --}}
-	<meta content="Mwangi David Muthui|0721257308" name="author"/> 
+	<meta content="Mwangi David Muthui|0721257308" name="author"/>
 	<meta charset="utf-8">
 	<meta name="google-site-verification" content="esZB6jU6pGSa2UGmMZhfFJrZ_ufNQaNrNUlrjDOHq2E" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
 	<meta name="Revisit-after" content="5">
 	<meta name="coverage" content="Worldwide">
 	<meta name="expires" content="never">
-	<meta http-equiv="content-language” content=”en-us”>
+	<meta http-equiv="content-language" content=”en-us”>
 	<meta name="audience" content="all">
 	<meta name="web-type" content="normal">
 	<meta name="doc-type" content="Web Page">
@@ -52,7 +52,7 @@
 	{{-- <link rel="stylesheet" href="/css/shop.css">
 	<link rel="stylesheet" href="/css/custom.css"> --}}
 	<script src="/js/vendor/modernizr-2.6.2.min.js"></script>
-	
+
 
 <!-- Facebook Pixel Code -->
 <script>
@@ -75,9 +75,9 @@
 
 <body >
 
-	<div class="preloader">
+	{{-- <div class="preloader">
 		<div class="preloader_image"></div>
-	</div>
+	</div> --}}
 
 	<!-- search modal -->
 	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
@@ -122,7 +122,7 @@
 							<a href="{{route('index')}}" class="logo top_logo">
 								<img src="images/sosio-white-v4.png" alt="sosio-fruits ">
 							</a>
-					
+
 							<span class="toggle_menu fixed">
 								<span></span>
 							</span>

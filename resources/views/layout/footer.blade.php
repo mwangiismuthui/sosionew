@@ -22,19 +22,19 @@
             </div>
             <div class="col-md-4 col-sm-6 col-md-pull-4 text-center">
                 <div class="widget widget_text widget_media_margin">
-                    <h3 class="widget-title">Explore Our Variety</h3>
+                    <h3 class="widget-title">Quick LInks</h3>
                     <ul class="list1 no-bullets no-top-border no-bottom-border greylinks">
                         <li>
-                        <a href="javascript:void();">Mangoes</a>
+                        <a href="{{route('index')}}">Home</a>
                         </li>
                         <li>
-                            <a href="javascript:void();">Brocolli</a>
+                            <a href="{{route('order')}}">Order Online</a>
                         </li>
                         <li>
-                            <a href="javascript:void();">Spices</a>
+                            <a href="{{route('about')}}">About us</a>
                         </li>
                         <li>
-                            <a href="javascript:void();">Herbs</a>
+                            <a href="{{route('contact')}}">Contact us</a>
                         </li>
                     </ul>
                 </div>

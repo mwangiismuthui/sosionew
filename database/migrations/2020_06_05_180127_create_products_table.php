@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->uuid('id')->primary();
             $table->uuid('category_id');
             $table->string('product');
-            $table->longText('slug');
+            $table->longText('slug')->unique();
             $table->longText('description');
             // $table->double('price');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

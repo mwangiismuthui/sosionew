@@ -11,12 +11,13 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
 
 Route::get('/','FrontEndController@index')->name('index');
 // Route::get('/our-products/sosio-fruits-and-vegetables','FrontEndController@products')->name('products');
 Route::get('/about-sosio-fruits-and-vegetables','FrontEndController@about')->name('about');
 Route::get('/contact-sosio-fruits-and-vegetables','FrontEndController@contact')->name('contact');
-Route::get('/quality_assurance','FrontEndController@quality_assurance')->name('quality_assurance');
+// Route::get('/quality_assurance','FrontEndController@quality_assurance')->name('quality_assurance');
 Route::get('/sosio-fruits-and-vegetables/order/online','FrontEndController@order')->name('order');
 // Route::get('/fresh-fruits/kenya-mangoes','FrontEndController@mangoes')->name('mangoes');
 // Route::get('/fresh-vegetables/kenya-carrots','FrontEndController@carrots')->name('carrots');
@@ -35,7 +36,7 @@ Route::get('/sosio-fruits-and-vegetables/order/online','FrontEndController@order
 // Route::get('/kenya-thorn-mellon/thorn-mellon','FrontEndController@thorn_mellon')->name('thorn_mellon');
 // Route::get('/fresh-fruits/strawberries-in-kenya','FrontEndController@straw_berries')->name('straw_berries');
 // Route::get('/fresh-fruits/kenya-passion-fruit','FrontEndController@passion_fruit')->name('passion_fruit');
-// Route::get('/fresh-fruits/kenya-pears','FrontEndController@pears')->name('pears');
+// Route::get('/fresh-fruits/kenya-pears','FrontEndController@pears')->name('pears');/
 // Route::get('/fresh-kenyan-rosemary/rosemary-in-kenya','FrontEndController@rosemary')->name('rosemary');
 // Route::get('/kenyan-herbs/fresh-curry-leaves','FrontEndController@curry_leaves')->name('curry_leaves');
 // Route::get('/kenya-lemon-grass/fresh-lemon-grass','FrontEndController@lemon_grass')->name('lemon_grass');
@@ -55,7 +56,7 @@ Route::group(['middleware' => 'auth'], function () {
 // ..................Products..............................//
 Route::get('/product/index', 'ProductController@index')->name('product.index');
 Route::post('/product/store', 'ProductController@store')->name('product.store');
-Route::get('/product/edit/{id}', 'ProductController@edit')->name('product.edit');
+Route::get('/product/edit/{slug}', 'ProductController@edit')->name('product.edit');
 Route::post('/product/update/{id}', 'ProductController@update')->name('product.update');
 Route::get('/product/details/{id}', 'ProductController@productDetails')->name('product.details');
 Route::delete('/product/destroy/', 'ProductController@destroy')->name('product.destroy');

@@ -10,10 +10,11 @@ use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
+use Symfony\Component\Console\Input\Input;
 use Yajra\Datatables\Datatables;
 use Symfony\Component\HttpFoundation\Response;
 
-
+use Image;
 class ProductController extends Controller
 {
     /**
@@ -48,6 +49,23 @@ class ProductController extends Controller
     public function create()
     {
         //
+    }
+
+    public function storeIMage(Request $request)
+    {
+
+        $initial = "SosioFruits";
+        $image = $request->file('image');
+        $input['imagename'] = $initial .time().'.'.$image->getClientOriginalExtension();
+
+        $destinationPath = public_path('/SosioFruits_Products');
+        $img = Image::make($image->getRealPath());
+        $img->resize(100, 100, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$input['imagename']);
+
+        return back()
+            ->with('success','Image Upload successful');
     }
 
     /**
@@ -137,12 +155,27 @@ class ProductController extends Controller
     {
         $initial = "SosioFruits";
         $random = Str::random();
-        $name = $initial  .$random. time() . '.' . $image->getClientOriginalExtension();
-        if ($image->move(public_path() . $destinationPath, $name)) {
-            return $name;
+
+        $image = $image;
+        $imgname = $initial . $random. time().'.'.$image->getClientOriginalExtension();
+
+        $destinationPath = public_path($destinationPath);
+
+        $img = Image::make($image->getRealPath());
+
+        $img->resize(100, 100, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$imgname);
+
+
+
+        if ($img) {
+            # code...
+            return $imgname;
         } else {
             return null;
         }
+
     }
 
     /**
@@ -191,7 +224,7 @@ class ProductController extends Controller
             'category_id' => 'required',
             'product' => 'required',
             'description' => 'required',
-            'slug' => 'required' ,
+            'slug' => 'required|unique:products,id,' ,
 
         ];
 

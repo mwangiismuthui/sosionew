@@ -14,21 +14,21 @@
                         <div class="table-responsive">
                             <table id="slider_table" class="table table-bordered ">
                                 <thead>
-                               
+
                                         <th>Title</th>
                                         <th>SubTitle</th>
                                         <th>Action</th>
-                                
+
                                 </thead>
                                  <tbody>
-                                    
-                                </tbody> 
+
+                                </tbody>
                                 <tfoot>
-                                
+
                                     <th>Title</th>
                                     <th>SubTitle</th>
                                     <th>Action</th>
-                                 
+
                                 </tfoot>
                             </table>
                         </div>
@@ -66,14 +66,14 @@
 
                         </textarea>
                     </div>
-                   
+
                     <div class="form-group">
                         <label for="main_image">Main Sevirce Image</label>
                         <input type="file" class="form-control form-control-rounded" id="main_image"
                             placeholder="Enter Service Main Name" name="main_image">
                     </div>
-                  
-                  
+
+
 
 
                     <div class="form-group">
@@ -82,7 +82,7 @@
                     </div>
                 </form>
             </div>
-  
+
         </div>
     </div>
 </div>
@@ -93,7 +93,7 @@
 
         var table = $('#slider_table').DataTable({
         processing: true,
-        serverSide: true,    
+        serverSide: true,
         ajax: "{{ route('slider.index')}}",
         columns:[
         {data: 'title', name: 'title'},
@@ -101,7 +101,7 @@
         {data: 'action', name: 'action', orderable: false, searchable: false},
         ],
         columnDefs:[
-       
+
         ]
 
         });
@@ -111,7 +111,7 @@
 
 
 
-   
+
 
    function sliderdelete(slider_id) {
        console.log(slider_id);
@@ -183,7 +183,7 @@ $('#slider_table').DataTable().ajax.reload();
                         msg: data.message,
                     });
                 }
-             
+
                 if (data.success) {
                     Lobibox.notify("success", {
                         pauseDelayOnHover: true,
@@ -198,7 +198,7 @@ $('#slider_table').DataTable().ajax.reload();
                 $('#slider_modal').modal('hide');
                 $('#slider_table').DataTable().ajax.reload();
             },
-            error: function () {
+            error: function (err) {
             Lobibox.notify("error", {
                 pauseDelayOnHover: true,
                 continueDelayOnInactiveTab: false,
@@ -206,11 +206,11 @@ $('#slider_table').DataTable().ajax.reload();
                 icon: "fa fa-times-circle",
                 msg: "Image Upload failed. Try again",
             });
-            console.log("error");
+            console.log(err.message);
                                 },
         });
     });
-   
+
 </script>
 
 

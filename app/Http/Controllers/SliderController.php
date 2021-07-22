@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Yajra\Datatables\Datatables;
 use Symfony\Component\HttpFoundation\Response;
+
+use Image;
 class SliderController extends Controller
 {
     /**
@@ -77,16 +79,29 @@ class SliderController extends Controller
         }
     }
 
-        public function generateUniqueFileName($image, $destinationPath)
+    public function generateUniqueFileName($image, $destinationPath)
     {
         $initial = "SosioFruits";
         $random = Str::random();
-        $name = $initial  .$random. time() . '.' . $image->getClientOriginalExtension();
-        if ($image->move(public_path() . $destinationPath, $name)) {
-            return $name;
+
+        $image = $image;
+        $imgname = $initial . $random. time().'.'.$image->getClientOriginalExtension();
+
+        $destinationPath = public_path($destinationPath);
+
+        $img = Image::make($image->getRealPath());
+
+        $img->save($destinationPath.'/'.$imgname);
+
+
+
+        if ($img) {
+            # code...
+            return $imgname;
         } else {
             return null;
         }
+
     }
 
     /**
@@ -109,7 +124,7 @@ class SliderController extends Controller
     public function edit(Request $request,$id)
     {
         $sliders =Slider::where('id',$id)->get();
-                 
+
 
         return view ('admin.slider.edit',compact('sliders'));
     }
@@ -129,12 +144,12 @@ class SliderController extends Controller
             // foreach ($request->file('upl') as $image) {
             $sliderimages = $request->file('main_image');
             $imgname = $this->generateUniqueFileName($sliderimages, $imgdestination);
-        }  
+        }
      $slider_update=Slider::where('id',$id)->update([
             'title'=>$request->title,
             'subtitle'=>$request->subtitle,
             'image_path'=>$imgname
-            ]); 
+            ]);
         if($slider_update) {
             return response([
                 'success'=>True,
@@ -147,7 +162,7 @@ class SliderController extends Controller
             ],Response::HTTP_OK);
         }
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -173,6 +188,6 @@ class SliderController extends Controller
             ],Response::HTTP_OK);
         }
         }
-    
+
     }
 }

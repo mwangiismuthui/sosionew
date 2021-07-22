@@ -14,25 +14,25 @@
                         <div class="table-responsive">
                             <table id="product_table" class="table table-bordered ">
                                 <thead>
-                               
+
                                     <th>Action</th>
                                     <th> Product Name</th>
                                     <th>Category</th>
                                     <th>Slug</th>
                                     <th>Description</th>
-                                
+
                                 </thead>
                                  <tbody>
-                                    
-                                </tbody> 
+
+                                </tbody>
                                 <tfoot>
-                                
+
                                     <th>Action</th>
                                     <th> Product Name</th>
                                     <th>Category</th>
                                     <th>Slug</th>
                                     <th>Description</th>
-                                 
+
                                 </tfoot>
                             </table>
                         </div>
@@ -40,6 +40,14 @@
                 </div>
             </div>
         </div><!-- End Row-->
+
+        <img src="{{asset('SosioFruits_Products/SosioFruits1626911345.jpg')}}" />
+
+        <form action="{{route('product.storeIMage')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="image" id="3">
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </div>
 
@@ -86,7 +94,7 @@
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label for="main_image">Product Slug</label>
-  
+
                             <textarea name="slug" id="" cols="30" rows="10"
                                 class="form-control form-control-rounded word_count" ></textarea>
 Total word count: <span id="display_count">0</span> words. Words left: <span id="word_left">40</span>
@@ -144,12 +152,12 @@ $(document).ready(function() {
             $('#word_left').text(40-words);
         }
     });
- }); 
+ });
 
 
         var table = $('#product_table').DataTable({
         processing: true,
-        serverSide: true,    
+        serverSide: true,
         ajax: "{{ route('product.index')}}",
         columns:[
 
@@ -160,7 +168,7 @@ $(document).ready(function() {
         {data: 'description', name: 'description'},
         ],
         columnDefs:[
-       
+
         ]
 
         });
@@ -256,8 +264,8 @@ $(document).ready(function() {
             },
         });
     });
-   
-   
+
+
 </script>
 
 

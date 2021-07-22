@@ -163,7 +163,7 @@ class ProductController extends Controller
 
         $img = Image::make($image->getRealPath());
 
-        $img->resize(100, 100, function ($constraint) {
+        $img->resize(550, 550, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath.'/'.$imgname);
 
@@ -322,14 +322,19 @@ class ProductController extends Controller
 
         }
          }
-         public function productDetails($id){
-            $category_id = Product::where('id',$id)->pluck('category_id')->first();
+         public function productDetails($slug){
+            $category_id = Product::where('slug',$slug)->pluck('category_id')->first();
             $relateds = Product::where('category_id',$category_id)->get();
-            $products =Product::where('id',$id)->get();
+            $products =Product::where('slug',$slug)->get();
+
+            $id = $products[0]['id'];
+
             $productphotos =ProductPhoto::where('product_id',$id)->get();
+            $main_image = $productphotos->where('type', 'main_image')->pluck('image_path');
+            $main_image = $main_image[0];
+            // dd($main_image);
 
             $seos = Seo::where('product_id',$id)->get();
-            // dd($products[0]['slug']);
 
             if (!$seos->isEmpty()) {
                 foreach ($seos as $seo) {
@@ -351,7 +356,7 @@ class ProductController extends Controller
                 $meta_title =$product->product.''."|Sosio Fruits and Vegetables";
             $name =$product->product;
              }
-            return view ('export.product_details',compact('meta_title','meta_description','meta_keyword','meta_url','meta_site_title', 'name', 'productphotos','products','relateds'));
+            return view ('export.product_details',compact('meta_title','meta_description','meta_keyword','meta_url','meta_site_title', 'name', 'productphotos', 'main_image','products','relateds'));
          }
 
 

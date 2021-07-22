@@ -4,6 +4,7 @@
     <div class="flexslider vertical-nav" data-dots="true" data-nav="false">
         <ul class="slides">
 @foreach ($sliders as $slider)
+      {{--  <li><img src="{{asset('SosioFruits_Products/{{$slider->image_path}}')}}"  alt="{{$slider->subtitle}}" style="">  --}}
       <li><img src="{{ URL::to('/') }}/SliderImages/{{$slider->image_path}}" alt="{{$slider->subtitle}}" style="">
                 <div class="container">
                     <div class="row">
@@ -18,17 +19,17 @@
                                     <div class="intro-layer" data-animation="fadeInUp">
                                         <h2 class="text-lowercase thin">
                                                {{$slider->title }}
-                                        
+
                                         </h2>
                                     </div>
-                                    
+
                                 </div>
 
                             </div>
-                            
+
             </li>
 @endforeach
-        
+
 
         </ul>
 
@@ -59,7 +60,7 @@
                     </div>
                     <h4 class="text-uppercase">
                         <a href="{{route('about')}}">
-                Mission<br> 
+                Mission<br>
             </a>
                     </h4>
                     <p>To provide rapid and excellent, around-the-clock customer service and value</p>
@@ -98,22 +99,22 @@
 <section class="ls section_padding_top_130 section_padding_bottom_130">
     <div class="container">
         <div class="row">
-            
+
             <div class="col-sm-12 text-center">
                 <h2 class="section_header">
                     <span class="small">Our Products</span>
-                   
+
                 </h2>
             </div>
-            
+
         </div>
-     
-     
+
+
         <div class="row columns_margin_bottom_20">
             @foreach ($products as $product)
             <div class="col-lg-4 col-sm-6">
                 <article class="vertical-item content-padding with_border color2_border rounded">
-                    
+
                     <div class="item-media top_rounded overflow_hidden" id="img-susan">
                         <img src="{{ URL::to('/') }}/SosioFruits_Products/{{$product->productphotos->where('type','main_image')->pluck('image_path')->first()}}" alt="{{$product->product}}">
                         <div class="media-links">
@@ -123,26 +124,26 @@
                         <header class="content-justify">
                             <div>
                                 <h4 id="product-header">
-                                    <a href="{{route('product.details',$product->id)}}">
-                            {{$product->product}}<br> 
+                                    <a href="{{route('product.details',$product->slug)}}">
+                            {{$product->product}}<br>
                         </a>
                                 </h4>
                                 <p id="text-export">{{$product->slug}}</p>
                             </div>
                             <div>
-                     
+
                             </div>
                         </header>
-                     
+
                 </article>
             </div>
             @endforeach
-          
 
-             
+
+
         </div>
-     
-    </div> 
+
+    </div>
 </section>
 
 <section class="ds parallax page_testimonials section_padding_top_130 section_padding_bottom_130">
@@ -151,7 +152,7 @@
                 <div class="col-sm-12 text-center">
                     <h2 class="section_header">
                         <span class="small highlight3">What our clients are saying</span>
-                   
+
                     </h2>
 
                     <div class="owl-carousel testimonials-owl-carousel" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-dots="false" data-nav="true">
@@ -186,5 +187,5 @@
         </div>
     </section>
 
-   
+
 @endsection

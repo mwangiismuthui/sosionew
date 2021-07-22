@@ -59,7 +59,7 @@ Route::post('/product/store', 'ProductController@store')->name('product.store');
 Route::post('/product/storeIMage', 'ProductController@storeIMage')->name('product.storeIMage');
 Route::get('/product/edit/{slug}', 'ProductController@edit')->name('product.edit');
 Route::post('/product/update/{id}', 'ProductController@update')->name('product.update');
-Route::get('/product/details/{id}', 'ProductController@productDetails')->name('product.details');
+Route::get('/product/details/{slug}', 'ProductController@productDetails')->name('product.details');
 Route::delete('/product/destroy/', 'ProductController@destroy')->name('product.destroy');
 Route::delete('/photo/destroy/', 'ProductController@photoDestroy')->name('photo.destroy');
 

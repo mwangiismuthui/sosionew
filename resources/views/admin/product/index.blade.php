@@ -40,14 +40,14 @@
                 </div>
             </div>
         </div><!-- End Row-->
-
+{{--  
         <img src="{{asset('SosioFruits_Products/SosioFruits1626911345.jpg')}}" />
 
         <form action="{{route('product.storeIMage')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="file" name="image" id="3">
             <button type="submit">Submit</button>
-        </form>
+        </form>  --}}
     </div>
 </div>
 
@@ -96,7 +96,7 @@
                             <label for="main_image">Product Slug</label>
 
                             <textarea name="slug" id="" cols="30" rows="10"
-                                class="form-control form-control-rounded word_count" ></textarea>
+                                class="form-control form-control-rounded word_count" placeholder="Please Note that the slug Can not be Updated"></textarea>
 Total word count: <span id="display_count">0</span> words. Words left: <span id="word_left">40</span>
                         </div>
                     </div>

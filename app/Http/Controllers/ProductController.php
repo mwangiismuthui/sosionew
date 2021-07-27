@@ -81,7 +81,8 @@ class ProductController extends Controller
             $rules = [
                 'category_id' => 'required',
                 'product' => 'required',
-                'description' => 'required',
+                'short_description' => 'required',
+                'main_description' => 'required',
                 'slug' => 'required|unique:products',
                 // 'price' => 'required',
                 'main_image' => 'required',
@@ -123,7 +124,8 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->product = $request->product;
         // $product->price = $request->price;
-        $product->description = $request->description;
+        $product->short_description = $request->short_description;
+        $product->main_description = $request->main_description;
         $product->slug = $slug;
         if ($product->save()) {
 
@@ -223,7 +225,8 @@ class ProductController extends Controller
         $rules = [
             'category_id' => 'required',
             'product' => 'required',
-            'description' => 'required',
+            'short_description' => 'required',
+            'main_description' => 'required',
             'slug' => 'required|unique:products,id,' ,
 
         ];
@@ -270,7 +273,8 @@ class ProductController extends Controller
         Product::where('slug',$slug)->update([
             'category_id'=>$request->category_id,
             'product'=>$request->product,
-            'description'=>$request->description,
+            'short_description'=>$request->short_description,
+            'main_description'=>$request->main_description,
             'slug'=>$slug
         ]);
         // }

@@ -50,7 +50,7 @@
 
 
                         <div style="text-align:justify;">
-                            {!!$product->description!!}
+                            {!!$product->main_description!!}
 
                         <a href="{{route('order')}}" class="theme_button color2">
                           Order {{$product->product}} Now

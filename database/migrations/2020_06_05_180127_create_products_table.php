@@ -18,7 +18,8 @@ class CreateProductsTable extends Migration
             $table->uuid('category_id');
             $table->string('product');
             $table->longText('slug')->unique();
-            $table->longText('description');
+            $table->longText('short_description');
+            $table->longText('main_description');
             // $table->double('price');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->softDeletes();

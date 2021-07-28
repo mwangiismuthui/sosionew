@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div><!-- End Row-->
-{{--  
+{{--
         <img src="{{asset('SosioFruits_Products/SosioFruits1626911345.jpg')}}" />
 
         <form action="{{route('product.storeIMage')}}" method="POST" enctype="multipart/form-data">
@@ -97,13 +97,21 @@
 
                             <textarea name="slug" id="" cols="30" rows="10"
                                 class="form-control form-control-rounded word_count" placeholder="Please Note that the slug Can not be Updated"></textarea>
-Total word count: <span id="display_count">0</span> words. Words left: <span id="word_left">40</span>
+                                Total word count: <span id="display_count">0</span> words. Words left: <span id="word_left">40</span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label for="main_image">Description</label>
-                            <textarea name="description" id="summernoteEditor" cols="30" rows="10"
+                            <label for="main_image">Short Description</label>
+                            <textarea name="short_description" id="summernoteEditor" class="summernoteEditor" cols="30" rows="10"
+                                class="form-control form-control-rounded"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="main_image">Main Description</label>
+                            <textarea name="main_description" id="summernoteEditor02" class="summernoteEditor" cols="30" rows="10"
                                 class="form-control form-control-rounded"></textarea>
 
                         </div>
@@ -165,14 +173,14 @@ $(document).ready(function() {
         {data: 'product', name: 'product'},
         {data: 'category.category', name: 'category.category'},
         {data: 'slug', name: 'slug'},
-        {data: 'description', name: 'description'},
+        {data: 'main_description', name: 'main_description'},
         ],
         columnDefs:[
 
         ]
 
         });
-  $('#summernoteEditor').summernote({
+  $('.summernoteEditor').summernote({
             height: 400,
             tabsize: 2
         });

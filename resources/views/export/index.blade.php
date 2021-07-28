@@ -109,7 +109,6 @@
 
         </div>
 
-
         <div class="row columns_margin_bottom_20">
             @foreach ($products as $product)
             <div class="col-lg-4 col-sm-6">
@@ -128,7 +127,9 @@
                             {{$product->product}}<br>
                         </a>
                                 </h4>
-                                <p id="text-export">{{$product->slug}}</p>
+                                <p id="text-export">
+                                {{ str_replace("&nbsp;",' ',strip_tags(Str::limit($product->short_description, 150, '...'))) }} <span> <a href="{{route('product.details',$product->slug)}}" >Read more</a></span></p>
+
                             </div>
                             <div>
 
@@ -138,10 +139,6 @@
                 </article>
             </div>
             @endforeach
-
-
-
-        </div>
 
     </div>
 </section>

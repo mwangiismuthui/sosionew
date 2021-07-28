@@ -42,10 +42,20 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label for="main_image">Description</label>
-                            <textarea name="description" id="summernoteEditor" cols="30" rows="10"
+                            <label for="main_image">Short Description</label>
+                            <textarea name="short_description" id="summernoteEditor" class="summernoteEditor" cols="30" rows="10"
                                 class="form-control form-control-rounded">
-                                {{$product->description}}
+                                {{$product->short_description}}
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="main_image">Main Description</label>
+                            <textarea name="main_description" id="summernoteEditor01" class="summernoteEditor" cols="30" rows="10"
+                                class="form-control form-control-rounded">
+                                {{$product->main_description}}
                                 </textarea>
 
                         </div>
@@ -114,7 +124,7 @@ $(document).ready(function() {
     });
  });
 
-  $('#summernoteEditor').summernote({
+  $('.summernoteEditor').summernote({
             height: 400,
             tabsize: 2
         });

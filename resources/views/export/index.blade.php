@@ -5,7 +5,7 @@
         <ul class="slides">
 @foreach ($sliders as $slider)
       {{--  <li><img src="{{asset('SosioFruits_Products/{{$slider->image_path}}')}}"  alt="{{$slider->subtitle}}" style="">  --}}
-      <li><img src="{{ URL::to('/') }}/SliderImages/{{$slider->image_path}}" alt="{{$slider->subtitle}}" style="">
+      <li><img src="{{ URL::to('/') }}/SliderImages/{{$slider->image_path}}" class="img-fluid" alt="{{$slider->subtitle}}" style="">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 text-center">

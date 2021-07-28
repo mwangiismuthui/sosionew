@@ -84,12 +84,17 @@ class SliderController extends Controller
         $initial = "SosioFruits";
         $random = Str::random();
 
-        $image = $image;
+        $imageReal = $image;
         $imgname = $initial . $random. time().'.'.$image->getClientOriginalExtension();
 
         $destinationPath = public_path($destinationPath);
 
-        $img = Image::make($image->getRealPath());
+        $img = Image::make($imageReal->getRealPath());
+
+        // resize the image to a width of 300 and constrain aspect ratio (auto height)
+        $img->resize(300, null, function ($constraint) {
+            $constraint->aspectRatio();
+        });
 
         $img->save($destinationPath.'/'.$imgname);
 

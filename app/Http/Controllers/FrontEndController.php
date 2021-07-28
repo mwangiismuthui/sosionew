@@ -22,7 +22,11 @@ class FrontEndController extends Controller
         $meta_description ="Kenyan exporters of  Fresh Fruits, Herbs & Vegetables";
         $meta_keyword ="Fruits in Kenya,herbs,spices,brocolli,Kenya,exports,Vegetables,Kenya herbs exporters,kenya fruit exporters,kenya vegetables exporters,kenya fruit growers,kenya vegetable growers ,kenya vegetable growers";
         $meta_url ="sosiofruitsandvegetables.com";
-       $name = "Fruits and Vegetables";
+        $name = "Fruits and Vegetables";
+
+
+
+
        return view ('export.index',compact('meta_title','meta_description','meta_keyword','meta_url','meta_site_title','name','products','sliders'));
     }
 

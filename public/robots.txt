@@ -5,7 +5,19 @@ Allow:/contact-sosio-fruits-and-vegetables
 Allow:/sosio-fruits-and-vegetables/order/online
 Allow:/contact/post
 Allow:/order/post
-Allow:/newsletter
+Allow:/product/details/best-capsicum-in-kenya
+Allow:/product/details/best-mint-in-kenya
+Allow:/product/details/best-basil-in-kenya
+Allow:/product/details/best-passion-fruit-in-kenya
+Allow:/product/details/best-chills-in-kenya
+Allow:/product/details/best-sage-in-kenya
+Allow:/product/details/best-rosemary-in-kenya
+Allow:/product/details/best-thyme-in-kenya
+Allow:/product/details/best-mangoes-in-kenya
+Allow:/product/details/best-oregano-in-kenya
+Allow:/product/details/best-hass-avocados-in-kenya
+Allow:/product/details/best-fuerte-avocados-in-kenya
+
 
 
 Sitemap: http://sosiofruitsandvegetables.com/sitemap.xml

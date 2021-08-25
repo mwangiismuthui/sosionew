@@ -1,7 +1,5 @@
 /node_modules
 /public/hot
-/public/SliderImages
-/public/SosioFruits_Products
 /public/storage
 /storage/*.key
 .env
@@ -11,3 +9,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+                
